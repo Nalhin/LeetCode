@@ -11,7 +11,7 @@ class LongestCommonPrefix_14Test {
 
   LongestCommonPrefix_14 solution = new LongestCommonPrefix_14();
 
-  public static class TestArgumentsProvider implements ArgumentsProvider {
+  private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 

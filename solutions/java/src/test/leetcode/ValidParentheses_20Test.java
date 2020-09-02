@@ -55,7 +55,7 @@ class ValidParentheses_20Test {
 
   ValidParentheses_20 solution = new ValidParentheses_20();
 
-  public static class TestArgumentsProvider implements ArgumentsProvider {
+  private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 

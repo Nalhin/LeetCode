@@ -1,3 +1,4 @@
+import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -6,31 +7,31 @@ import org.junit.jupiter.params.provider.ArgumentsSource;
 
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RomanToInteger_13Test {
+class RemoveDuplicatesFromSortedArray_26Test {
 
-  RomanToInteger_13 solution = new RomanToInteger_13();
+  RemoveDuplicatesFromSortedArray_26 solution = new RemoveDuplicatesFromSortedArray_26();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments("III", 3),
-          arguments("IV", 4),
-          arguments("IX", 9),
-          arguments("LVIII", 58),
-          arguments("MCMXCIV", 1994));
+          arguments(new int[] {1, 1, 2}, new int[] {1, 2}, 2),
+          arguments(new int[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4}, new int[] {0, 1, 2, 3, 4}, 5));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void romanToInt(String input, int expected) {
-    int result = solution.romanToInt(input);
+  void removeArguments(int[] input, int[] transformedInput, int expected) {
+    int result = solution.removeDuplicates(input);
 
-    assertThat(result).isEqualTo(expected);
+    SoftAssertions.assertSoftly(
+        softly -> {
+          softly.assertThat(result).isEqualTo(expected);
+          softly.assertThat(input).startsWith(transformedInput);
+        });
   }
 }
