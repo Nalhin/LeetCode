@@ -1,3 +1,5 @@
+package easy;
+
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;

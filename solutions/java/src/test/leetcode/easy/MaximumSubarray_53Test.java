@@ -1,3 +1,5 @@
+package easy;
+
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -9,27 +11,22 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RomanToInteger_13Test {
+class MaximumSubarray_53Test {
 
-  RomanToInteger_13 solution = new RomanToInteger_13();
+  MaximumSubarray_53 solution = new MaximumSubarray_53();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
-      return Stream.of(
-          arguments("III", 3),
-          arguments("IV", 4),
-          arguments("IX", 9),
-          arguments("LVIII", 58),
-          arguments("MCMXCIV", 1994));
+      return Stream.of(arguments(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void romanToInt(String input, int expected) {
-    int result = solution.romanToInt(input);
+  void maxSubArray(int[] nums, int expected) {
+    int result = solution.maxSubArray(nums);
 
     assertThat(result).isEqualTo(expected);
   }

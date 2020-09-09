@@ -1,4 +1,4 @@
-// Given an array nums and a value val, remove all instances of that value in-pla
+package easy;// Given an array nums and a value val, remove all instances of that value in-pla
 // ce and return the new length.
 //
 // Do not allocate extra space for another array, you must do this by modifying

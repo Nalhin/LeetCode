@@ -1,4 +1,4 @@
-// Given a sorted array nums, remove the duplicates in-place such that each eleme
+package easy;// Given a sorted array nums, remove the duplicates in-place such that each eleme
 // nt appear only once and return the new length.
 //
 // Do not allocate extra space for another array, you must do this by modifying
