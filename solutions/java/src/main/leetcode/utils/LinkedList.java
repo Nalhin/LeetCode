@@ -5,21 +5,30 @@ public class LinkedList {
   public static ListNode of(int first, int... args) {
     ListNode result = new ListNode(first, new ListNode());
     ListNode next = result.next;
-    ListNode prev = null;
+    ListNode prev = result;
     for (int i : args) {
       next.val = i;
       next.next = new ListNode();
       prev = next;
       next = next.next;
     }
-    if (prev != null) {
-      prev.next = null;
-    }
+    prev.next = null;
     return result;
   }
 
   public static ListNode empty() {
     return null;
+  }
+
+  public static ListNode findFirstOccurrence(ListNode head, int val) {
+    ListNode curr = head;
+    while (curr != null) {
+      if (curr.val == val) {
+        return curr;
+      }
+      curr = curr.next;
+    }
+    return new ListNode();
   }
 
   public static class ListNode {

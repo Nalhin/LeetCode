@@ -1,30 +1,32 @@
 package utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class BinaryTree {
 
   public static TreeNode of(Integer first, Integer... args) {
     List<Integer> list = new ArrayList<>(Arrays.asList(args));
     list.add(0, first);
-    return insert(0, list);
-  }
 
-  private static TreeNode insert(int pos, List<Integer> args) {
-    Integer val = args.get(pos);
-    TreeNode root = null;
+    TreeNode root = new TreeNode(first);
 
-    if (val != null) {
-      root = new TreeNode(val);
-      int left = pos * 2 + 1;
-      int right = pos * 2 + 2;
-      if (left < args.size()) {
-        root.left = insert(left, args);
+    Queue<TreeNode> q = new ArrayDeque<>();
+    q.add(root);
+
+    int i = 1;
+    while (!q.isEmpty() && i < list.size()) {
+      TreeNode currentNode = q.poll();
+      Integer left = list.get(i++);
+      if (left != null) {
+        currentNode.left = new TreeNode(left);
+        q.add(currentNode.left);
       }
-      if (right < args.size()) {
-        root.right = insert(right, args);
+      if (i < list.size()) {
+        Integer right = list.get(i++);
+        if (right != null) {
+          currentNode.right = new TreeNode(right);
+          q.add(currentNode.right);
+        }
       }
     }
 
