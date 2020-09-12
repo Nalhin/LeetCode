@@ -23,30 +23,15 @@ package easy;
 // 👍 2826 👎 81
 
 // leetcode submit region begin(Prohibit modification and deletion)
+
+import utils.BinaryTree.TreeNode;
+
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode
  * right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left,
  * TreeNode right) { this.val = val; this.left = left; this.right = right; } }
  */
 public class MaximumDepthOfBinaryTree_104 {
-  private static class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {}
-
-    TreeNode(int val) {
-      this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-      this.val = val;
-      this.left = left;
-      this.right = right;
-    }
-  }
-
   int top = 0;
 
   public int maxDepth(TreeNode root) {
@@ -56,7 +41,7 @@ public class MaximumDepthOfBinaryTree_104 {
     return top;
   }
 
-  public void treeTraversal(TreeNode node, int level) {
+  private void treeTraversal(TreeNode node, int level) {
     if (node.left != null) {
       treeTraversal(node.left, level + 1);
     }

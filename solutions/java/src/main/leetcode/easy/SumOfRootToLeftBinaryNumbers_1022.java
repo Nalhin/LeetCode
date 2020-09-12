@@ -34,9 +34,8 @@ package easy;// Given a binary tree, each node has value 0 or 1. Each root-to-le
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
-import javax.management.StringValueExp;
-import java.util.ArrayList;
-import java.util.List;
+
+import utils.BinaryTree.TreeNode;
 
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode
@@ -45,23 +44,6 @@ import java.util.List;
  */
 public class SumOfRootToLeftBinaryNumbers_1022 {
   public static class StringBasedSolution {
-    static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-
-      TreeNode() {}
-
-      TreeNode(int val) {
-        this.val = val;
-      }
-
-      TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-      }
-    }
 
     int sum = 0;
 
@@ -85,24 +67,6 @@ public class SumOfRootToLeftBinaryNumbers_1022 {
   }
 
   public static class BinaryShiftSolution {
-    static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-
-      TreeNode() {}
-
-      TreeNode(int val) {
-        this.val = val;
-      }
-
-      TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-      }
-    }
-
     int sum = 0;
 
     public int sumRootToLeaf(TreeNode root) {

@@ -1,4 +1,5 @@
-package easy;// Merge two sorted linked lists and return it as a new sorted list. The new list
+package easy;
+// Merge two sorted linked lists and return it as a new sorted list. The new list
 // should be made by splicing together the nodes of the first two lists.
 //
 // Example:
@@ -12,23 +13,9 @@ package easy;// Merge two sorted linked lists and return it as a new sorted list
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
+import utils.LinkedList.ListNode;
+
 public class MergeTwoSortedLists_21 {
-  public static class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {}
-
-    ListNode(int val) {
-      this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-      this.val = val;
-      this.next = next;
-    }
-  }
-
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     ListNode result = new ListNode();
     ListNode curr = result;
