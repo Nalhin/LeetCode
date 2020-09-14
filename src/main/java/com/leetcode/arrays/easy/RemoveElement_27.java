@@ -1,30 +1,35 @@
-package com.leetcode.easy;
-// Given a sorted array nums, remove the duplicates in-place such that each eleme
-// nt appear only once and return the new length.
+package com.leetcode.arrays.easy;
+// Given an array nums and a value val, remove all instances of that value in-pla
+// ce and return the new length.
 //
 // Do not allocate extra space for another array, you must do this by modifying
 // the input array in-place with O(1) extra memory.
 //
+// The order of elements can be changed. It doesn't matter what you leave beyond
+// the new length.
+//
 // Example 1:
 //
 //
-// Given nums = [1,1,2],
+// Given nums = [3,2,2,3], val = 3,
 //
 // Your function should return length = 2, with the first two elements of nums be
-// ing 1 and 2 respectively.
+// ing 2.
 //
 // It doesn't matter what you leave beyond the returned length.
+//
 //
 // Example 2:
 //
 //
-// Given nums = [0,0,1,1,1,2,2,3,3,4],
+// Given nums = [0,1,2,2,3,0,4,2], val = 2,
 //
-// Your function should return length = 5, with the first five elements of nums b
-// eing modified to 0, 1, 2, 3, and 4 respectively.
+// Your function should return length = 5, with the first five elements of nums c
+// ontaining 0, 1, 3, 0, and 4.
+//
+// Note that the order of those five elements can be arbitrary.
 //
 // It doesn't matter what values are set beyond the returned length.
-//
 //
 // Clarification:
 //
@@ -37,7 +42,7 @@ package com.leetcode.easy;
 //
 //
 //// nums is passed in by reference. (i.e., without making a copy)
-// int len = removeDuplicates(nums);
+// int len = removeElement(nums, val);
 //
 //// any modification to nums in your function would be known by the caller.
 //// using the length returned by your function, it prints the first len element
@@ -45,34 +50,24 @@ package com.leetcode.easy;
 // for (int i = 0; i < len; i++) {
 //     print(nums[i]);
 // } Related Topics Array Two Pointers
-// 👍 2794 👎 5547
+// 👍 1570 👎 2872
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
-import java.util.HashMap;
+public class RemoveElement_27 {
+  public int removeElement(int[] nums, int val) {
+    int position = 0;
 
-public class RemoveDuplicatesFromSortedArray_26 {
-  public int removeDuplicates(int[] nums) {
-    if (nums.length == 0) {
-      return 0;
-    }
-    int lastPosition = 1;
-    int prev = nums[0];
-
-    for (int i = 1; i < nums.length; i++) {
-      if (prev != nums[i]) {
-        nums[lastPosition] = nums[i];
-        lastPosition++;
+    for (int i = 0; i < nums.length; i++) {
+      if (nums[i] != val) {
+        nums[position++] = nums[i];
       }
-      prev = nums[i];
     }
-
-    return lastPosition;
+    return position;
   }
 }
 /*
     Runtime:0 ms, faster than 100.00% of Java online submissions.
-	Memory Usage:41.6 MB, less than 49.53% of Java online submissions.
+	Memory Usage:38.1 MB, less than 61.48% of Java online submissions.
 */
-
 // leetcode submit region end(Prohibit modification and deletion)

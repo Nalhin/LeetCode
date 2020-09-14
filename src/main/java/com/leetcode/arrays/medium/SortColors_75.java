@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.arrays.medium;
 // Given an array nums with n objects colored red, white, or blue, sort them in-p
 // lace so that objects of the same color are adjacent, with the colors in the orde
 // r red, white, and blue.

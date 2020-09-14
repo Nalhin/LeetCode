@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.arrays.medium;
 
 // Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements ap
 // pear twice and others appear once.

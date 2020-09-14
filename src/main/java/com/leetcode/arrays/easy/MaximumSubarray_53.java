@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.arrays.easy;
 // Given an integer array nums, find the contiguous subarray (containing at least
 // one number) which has the largest sum and return its sum.
 //
@@ -16,8 +16,6 @@ package com.leetcode.easy;
 // the divide and conquer approach, which is more subtle.
 // Related Topics Array Divide and Conquer Dynamic Programming
 // 👍 8741 👎 412
-
-import java.util.Arrays;
 
 // leetcode submit region begin(Prohibit modification and deletion)
 public class MaximumSubarray_53 {

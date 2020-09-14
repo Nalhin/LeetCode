@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.arrays.easy;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -11,29 +11,29 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RemoveDuplicatesFromSortedArray_26Test {
+class RemoveElement_27Test {
 
-  RemoveDuplicatesFromSortedArray_26 solution = new RemoveDuplicatesFromSortedArray_26();
+  RemoveElement_27 solution = new RemoveElement_27();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments(new int[] {1, 1, 2}, new int[] {1, 2}, 2),
-          arguments(new int[] {0, 0, 1, 1, 1, 2, 2, 3, 3, 4}, new int[] {0, 1, 2, 3, 4}, 5));
+          arguments(new int[] {3, 2, 2, 3}, 3, new int[] {2, 2}, 2),
+          arguments(new int[] {0, 1, 2, 2, 3, 0, 4, 2}, 2, new int[] {0, 1, 3, 0, 4}, 5));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void removeArguments(int[] input, int[] transformedInput, int expected) {
-    int result = solution.removeDuplicates(input);
+  void removeArguments(int[] input1, int input2, int[] transformedInput, int expected) {
+    int result = solution.removeElement(input1, input2);
 
     SoftAssertions.assertSoftly(
         softly -> {
           softly.assertThat(result).isEqualTo(expected);
-          softly.assertThat(input).startsWith(transformedInput);
+          softly.assertThat(input1).startsWith(transformedInput);
         });
   }
 }

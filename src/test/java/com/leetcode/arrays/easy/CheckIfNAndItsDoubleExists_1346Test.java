@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.arrays.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,23 +11,27 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MaximumSubarray_53Test {
+class CheckIfNAndItsDoubleExists_1346Test {
 
-  MaximumSubarray_53 solution = new MaximumSubarray_53();
+  CheckIfNAndItsDoubleExists_1346 solution = new CheckIfNAndItsDoubleExists_1346();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
-      return Stream.of(arguments(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6));
+      return Stream.of(
+          arguments(new int[] {10, 2, 5, 3}, true),
+          arguments(new int[] {7, 1, 14, 11}, true),
+          arguments(new int[] {3, 1, 7, 11}, false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void maxSubArray(int[] nums, int expected) {
-    int result = solution.maxSubArray(nums);
+  void checkIfExist(int[] input, boolean expectedResult) {
 
-    assertThat(result).isEqualTo(expected);
+    boolean actualResult = solution.checkIfExist(input);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }

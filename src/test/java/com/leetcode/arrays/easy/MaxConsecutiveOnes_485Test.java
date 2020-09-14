@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.arrays.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,32 +6,32 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class FindAllDuplicatesInAnArray_442Test {
+class MaxConsecutiveOnes_485Test {
 
-  FindAllDuplicatesInAnArray_442 solution = new FindAllDuplicatesInAnArray_442();
+  MaxConsecutiveOnes_485 solution = new MaxConsecutiveOnes_485();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments(new int[] {4, 3, 2, 7, 8, 2, 3, 1}, List.of(2, 3)),
-          arguments(new int[] {1, 2, 1, 2, 3}, List.of(1, 2)));
+          arguments(new int[] {1, 1, 0, 1, 1, 1}, 3),
+          arguments(new int[] {0, 0}, 0),
+          arguments(new int[] {1, 1}, 2));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findDuplicates(int[] input, List<Integer> expected) {
+  void findMaxConsecutiveOnes(int[] input, int expectedResult) {
 
-    List<Integer> result = solution.findDuplicates(input);
+    int actualResult = solution.findMaxConsecutiveOnes(input);
 
-    assertThat(result).isEqualTo(expected);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }
