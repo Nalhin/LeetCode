@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.strings.easy;
 // Given a pattern and a string str, find if str follows the same pattern.
 //
 // Here follow means a full match, such that there is a bijection between a lett
