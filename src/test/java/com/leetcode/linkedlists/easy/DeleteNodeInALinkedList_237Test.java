@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.linkedlists.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,29 +12,30 @@ import java.util.stream.Stream;
 
 import static com.leetcode.assertions.LinkedListAssertions.assertThatLinkedList;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
+import static com.leetcode.utils.LinkedList.findFirstOccurrence;
 
-class MergeTwoSortedLists_21Test {
+class DeleteNodeInALinkedList_237Test {
 
-  MergeTwoSortedLists_21 solution = new MergeTwoSortedLists_21();
+  DeleteNodeInALinkedList_237 solution = new DeleteNodeInALinkedList_237();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments(LinkedList.of(1, 2, 4), LinkedList.of(1, 3, 4), LinkedList.of(1, 1, 2, 3, 4, 4)),
-          arguments(LinkedList.of(1, 2, 4), LinkedList.empty(), LinkedList.of(1, 2, 4)),
-          arguments(LinkedList.empty(), LinkedList.of(1, 2, 4), LinkedList.of(1, 2, 4)),
-          arguments(LinkedList.empty(), LinkedList.empty(), LinkedList.empty()));
+          arguments(LinkedList.of(1,2,3,4), 3, LinkedList.of(1, 2, 4)),
+          arguments(LinkedList.of(0, 1), 0, LinkedList.of(1)),
+          arguments(LinkedList.of(-3, 5, -99), -3, LinkedList.of(5, -99)));
     }
   }
 
-
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void mergeTwoLists(ListNode input1, ListNode input2, ListNode expected) {
-    ListNode result = solution.mergeTwoLists(input1, input2);
+  void deleteNode(ListNode input, int val, ListNode expectedResult) {
+    ListNode node = findFirstOccurrence(input, val);
 
-    assertThatLinkedList(result).isEqualTo(expected);
+    solution.deleteNode(node);
+
+    assertThatLinkedList(input).isEqualTo(expectedResult);
   }
 }

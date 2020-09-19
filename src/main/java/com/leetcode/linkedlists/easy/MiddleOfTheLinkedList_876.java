@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.linkedlists.easy;
 // Given a non-empty, singly linked list with head node head, return a middle nod
 // e of linked list.
 //

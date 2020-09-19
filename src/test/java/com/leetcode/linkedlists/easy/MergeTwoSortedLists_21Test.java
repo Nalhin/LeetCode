@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.linkedlists.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,27 +13,28 @@ import java.util.stream.Stream;
 import static com.leetcode.assertions.LinkedListAssertions.assertThatLinkedList;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MiddleOfTheLinkedList_876Test {
+class MergeTwoSortedLists_21Test {
 
-  MiddleOfTheLinkedList_876 solution = new MiddleOfTheLinkedList_876();
+  MergeTwoSortedLists_21 solution = new MergeTwoSortedLists_21();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments(LinkedList.of(1, 2, 3, 4, 5), LinkedList.of(3, 4, 5)),
-          arguments(LinkedList.of(1, 2, 3, 4, 5, 7, 6, 321, 432), LinkedList.of(5, 7, 6, 321, 432)),
-          arguments(LinkedList.of(1, 2, 3, 4, 5, 6), LinkedList.of(4, 5, 6)));
+          arguments(LinkedList.of(1, 2, 4), LinkedList.of(1, 3, 4), LinkedList.of(1, 1, 2, 3, 4, 4)),
+          arguments(LinkedList.of(1, 2, 4), LinkedList.empty(), LinkedList.of(1, 2, 4)),
+          arguments(LinkedList.empty(), LinkedList.of(1, 2, 4), LinkedList.of(1, 2, 4)),
+          arguments(LinkedList.empty(), LinkedList.empty(), LinkedList.empty()));
     }
   }
 
+
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void middleNode(ListNode input, ListNode expectedResult) {
+  void mergeTwoLists(ListNode input1, ListNode input2, ListNode expected) {
+    ListNode result = solution.mergeTwoLists(input1, input2);
 
-    ListNode result = solution.middleNode(input);
-
-    assertThatLinkedList(result).isEqualTo(expectedResult);
+    assertThatLinkedList(result).isEqualTo(expected);
   }
 }

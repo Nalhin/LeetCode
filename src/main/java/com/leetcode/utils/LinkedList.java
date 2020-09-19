@@ -31,6 +31,25 @@ public class LinkedList {
     return new ListNode();
   }
 
+  public static ListNode addCycle(ListNode head, int cyclePosition) {
+    if (cyclePosition < 0) {
+      return head;
+    }
+    ListNode entry = head;
+    ListNode node = head;
+
+    while (cyclePosition-- > 0) {
+      node = node.next;
+    }
+
+    while (entry.next != null) {
+      entry = entry.next;
+    }
+    entry.next = node;
+
+    return head;
+  }
+
   public static class ListNode {
     public int val;
     public ListNode next;
