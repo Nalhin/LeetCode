@@ -32,9 +32,10 @@ public class LinkedList {
   }
 
   public static ListNode addCycle(ListNode head, int cyclePosition) {
-    if (cyclePosition < 0) {
+    if (cyclePosition < 0 || head == null) {
       return head;
     }
+
     ListNode entry = head;
     ListNode node = head;
 

@@ -13,27 +13,29 @@ import java.util.stream.Stream;
 import static com.leetcode.assertions.LinkedListAssertions.assertThatLinkedList;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RemoveNthNodeFromEndOfList_19Test {
+class InsertIntoASortedCircularLinkedList_708Test {
 
-  RemoveNthNodeFromEndOfList_19 solution = new RemoveNthNodeFromEndOfList_19();
+  InsertIntoASortedCircularLinkedList_708 solution = new InsertIntoASortedCircularLinkedList_708();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments(LinkedList.of(1, 2, 3, 4), 1, LinkedList.of(1, 2, 3)),
-          arguments(LinkedList.of(1, 2), 1, LinkedList.of(1)),
-          arguments(LinkedList.of(1, 2), 2, LinkedList.of(2)));
+          arguments(LinkedList.of(3, 4, 1), 2, LinkedList.of(3, 4, 1, 2)),
+          arguments(LinkedList.empty(), 1, LinkedList.of(1)),
+          arguments(LinkedList.of(1), 0, LinkedList.of(1, 0)),
+          arguments(LinkedList.of(3, 3, 5), 0, LinkedList.of(3, 3, 5, 0)),
+          arguments(LinkedList.of(1, 3, 5), 6, LinkedList.of(1, 3, 5, 6)));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void removeNthFromEnd(ListNode input, int position, ListNode expectedResult) {
+  void detectCycleHashSetSolution(ListNode head, int value, ListNode expectedResult) {
 
-    ListNode actualResult = solution.removeNthFromEnd(input, position);
+    ListNode result = solution.insert(LinkedList.addCycle(head, 0), value);
 
-    assertThatLinkedList(actualResult).isEqualTo(expectedResult);
+    assertThatLinkedList(result).isEqualToIgnoringCycles(expectedResult);
   }
 }

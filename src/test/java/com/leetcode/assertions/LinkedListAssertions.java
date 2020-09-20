@@ -3,7 +3,9 @@ package com.leetcode.assertions;
 import com.leetcode.utils.LinkedList.ListNode;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
@@ -23,14 +25,22 @@ public class LinkedListAssertions {
     return resultValues;
   }
 
-  public void isEqualTo(ListNode expected) {
-    List<Integer> expectedValues = new ArrayList<>();
-    while (expected != null) {
-      expectedValues.add(expected.val);
-      expected = expected.next;
+  private List<Integer> convertLLtoALIgnoringCycles(ListNode head) {
+    List<Integer> resultValues = new ArrayList<>();
+    Set<ListNode> visited = new HashSet<>();
+    while (head != null && visited.add(head)) {
+      resultValues.add(head.val);
+      head = head.next;
     }
+    return resultValues;
+  }
 
-    assertThat(convertLLtoAL(listHead)).isEqualTo(expectedValues);
+  public void isEqualTo(ListNode expected) {
+    assertThat(convertLLtoAL(listHead)).isEqualTo(convertLLtoAL(expected));
+  }
+
+  public void isEqualToIgnoringCycles(ListNode expected) {
+    assertThat(convertLLtoALIgnoringCycles(listHead)).isEqualTo(convertLLtoALIgnoringCycles(expected));
   }
 
   public void hasAtPosition(ListNode node, int position) {
