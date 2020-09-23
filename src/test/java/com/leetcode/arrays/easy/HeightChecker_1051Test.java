@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class HeightChecker_1051Test {
 
-  HeightChecker_1051 solution = new HeightChecker_1051();
+  private final HeightChecker_1051 solution = new HeightChecker_1051();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(arguments(new int[] {1, 1, 4, 2, 1, 3}, 3));
     }
   }

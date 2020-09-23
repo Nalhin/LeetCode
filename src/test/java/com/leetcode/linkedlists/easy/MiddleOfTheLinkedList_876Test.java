@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MiddleOfTheLinkedList_876Test {
 
-  MiddleOfTheLinkedList_876 solution = new MiddleOfTheLinkedList_876();
+  private final MiddleOfTheLinkedList_876 solution = new MiddleOfTheLinkedList_876();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(1, 2, 3, 4, 5), LinkedList.of(3, 4, 5)),
           arguments(LinkedList.of(1, 2, 3, 4, 5, 7, 6, 321, 432), LinkedList.of(5, 7, 6, 321, 432)),

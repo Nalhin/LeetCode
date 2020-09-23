@@ -13,7 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CompareVersionNumbers_165Test {
 
-  CompareVersionNumbers_165 solution = new CompareVersionNumbers_165();
+  private final CompareVersionNumbers_165 solution = new CompareVersionNumbers_165();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override

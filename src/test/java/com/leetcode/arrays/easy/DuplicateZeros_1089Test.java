@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class DuplicateZeros_1089Test {
 
-  DuplicateZeros_1089 solution = new DuplicateZeros_1089();
+  private final DuplicateZeros_1089 solution = new DuplicateZeros_1089();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {1, 0, 2, 3, 0, 4, 5, 0}, new int[] {1, 0, 0, 2, 3, 0, 0, 4}),
           arguments(new int[] {1, 2, 3}, new int[] {1, 2, 3}));

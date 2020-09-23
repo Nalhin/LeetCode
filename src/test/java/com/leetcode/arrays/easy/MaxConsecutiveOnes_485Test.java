@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MaxConsecutiveOnes_485Test {
 
-  MaxConsecutiveOnes_485 solution = new MaxConsecutiveOnes_485();
+  private final MaxConsecutiveOnes_485 solution = new MaxConsecutiveOnes_485();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {1, 1, 0, 1, 1, 1}, 3),
           arguments(new int[] {0, 0}, 0),

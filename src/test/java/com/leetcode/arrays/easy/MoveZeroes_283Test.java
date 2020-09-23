@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MoveZeroes_283Test {
 
-  MoveZeroes_283 solution = new MoveZeroes_283();
+  private final MoveZeroes_283 solution = new MoveZeroes_283();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(arguments(new int[] {0, 1, 0, 3, 12}, new int[] {1, 3, 12, 0, 0}));
     }
   }

@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MergeSortedArray_88Test {
 
-  MergeSortedArray_88 solution = new MergeSortedArray_88();
+  private final MergeSortedArray_88 solution = new MergeSortedArray_88();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(
               new int[] {1, 2, 3, 0, 0, 0},

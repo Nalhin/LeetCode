@@ -14,12 +14,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FindAllDuplicatesInAnArray_442Test {
 
-  FindAllDuplicatesInAnArray_442 solution = new FindAllDuplicatesInAnArray_442();
+  private final FindAllDuplicatesInAnArray_442 solution = new FindAllDuplicatesInAnArray_442();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {4, 3, 2, 7, 8, 2, 3, 1}, List.of(2, 3)),
           arguments(new int[] {1, 2, 1, 2, 3}, List.of(1, 2)));

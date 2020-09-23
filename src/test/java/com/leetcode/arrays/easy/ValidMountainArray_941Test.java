@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ValidMountainArray_941Test {
 
-  ValidMountainArray_941 solution = new ValidMountainArray_941();
+  private final ValidMountainArray_941 solution = new ValidMountainArray_941();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {2, 1}, false),
           arguments(new int[] {3, 5, 5}, false),

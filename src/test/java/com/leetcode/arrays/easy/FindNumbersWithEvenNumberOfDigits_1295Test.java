@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FindNumbersWithEvenNumberOfDigits_1295Test {
 
-  FindNumbersWithEvenNumberOfDigits_1295 solution = new FindNumbersWithEvenNumberOfDigits_1295();
+  private final FindNumbersWithEvenNumberOfDigits_1295 solution = new FindNumbersWithEvenNumberOfDigits_1295();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {12, 345, 2, 6, 7896}, 2),
           arguments(new int[] {0}, 0),

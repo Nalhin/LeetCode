@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MergeTwoSortedLists_21Test {
 
-  MergeTwoSortedLists_21 solution = new MergeTwoSortedLists_21();
+  private final MergeTwoSortedLists_21 solution = new MergeTwoSortedLists_21();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(1, 2, 4), LinkedList.of(1, 3, 4), LinkedList.of(1, 1, 2, 3, 4, 4)),
           arguments(LinkedList.of(1, 2, 4), LinkedList.empty(), LinkedList.of(1, 2, 4)),
@@ -28,7 +27,6 @@ class MergeTwoSortedLists_21Test {
           arguments(LinkedList.empty(), LinkedList.empty(), LinkedList.empty()));
     }
   }
-
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)

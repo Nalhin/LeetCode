@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CheckIfNAndItsDoubleExists_1346Test {
 
-  CheckIfNAndItsDoubleExists_1346 solution = new CheckIfNAndItsDoubleExists_1346();
+  private final CheckIfNAndItsDoubleExists_1346 solution = new CheckIfNAndItsDoubleExists_1346();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {10, 2, 5, 3}, true),
           arguments(new int[] {7, 1, 14, 11}, true),

@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FibonacciNumber_509Test {
 
-  FibonacciNumber_509 solution = new FibonacciNumber_509();
+  private final FibonacciNumber_509 solution = new FibonacciNumber_509();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(-4, -4),
           arguments(0, 0),

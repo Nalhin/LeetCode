@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class RemoveLinkedListElements_203Test {
 
-  RemoveLinkedListElements_203 solution = new RemoveLinkedListElements_203();
+  private final RemoveLinkedListElements_203 solution = new RemoveLinkedListElements_203();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(3, 2, 1, 3, 4, 5, 1, 1), 1, LinkedList.of(3, 2, 3, 4, 5)),
           arguments(LinkedList.of(1), 1, LinkedList.empty()),

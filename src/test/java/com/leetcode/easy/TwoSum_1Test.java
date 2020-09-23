@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class TwoSum_1Test {
 
-  TwoSum_1 solution = new TwoSum_1();
+  private final TwoSum_1 solution = new TwoSum_1();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {2, 7, 11, 15}, 9, new int[] {0, 1}),
           arguments(new int[] {3, 3}, 6, new int[] {0, 1}),

@@ -13,8 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class LengthOfLastWord_58Test {
 
-
-    LengthOfLastWord_58 solution = new LengthOfLastWord_58();
+    private final LengthOfLastWord_58 solution = new LengthOfLastWord_58();
 
     private static class TestArgumentsProvider implements ArgumentsProvider {
         @Override

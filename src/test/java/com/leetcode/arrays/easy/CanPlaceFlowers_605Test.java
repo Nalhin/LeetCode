@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CanPlaceFlowers_605Test {
 
-  CanPlaceFlowers_605 solution = new CanPlaceFlowers_605();
+  private final CanPlaceFlowers_605 solution = new CanPlaceFlowers_605();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {1, 0, 0, 0, 1}, 1, true),
           arguments(new int[] {1, 0, 0, 0, 1}, 2, false),

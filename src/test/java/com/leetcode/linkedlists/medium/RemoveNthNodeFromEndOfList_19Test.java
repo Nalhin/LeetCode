@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class RemoveNthNodeFromEndOfList_19Test {
 
-  RemoveNthNodeFromEndOfList_19 solution = new RemoveNthNodeFromEndOfList_19();
+  private final RemoveNthNodeFromEndOfList_19 solution = new RemoveNthNodeFromEndOfList_19();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(1, 2, 3, 4), 1, LinkedList.of(1, 2, 3)),
           arguments(LinkedList.of(1, 2), 1, LinkedList.of(1)),

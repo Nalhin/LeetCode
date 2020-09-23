@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class CarPooling_1094Test {
 
-  CarPooling_1094 solution = new CarPooling_1094();
+  private final CarPooling_1094 solution = new CarPooling_1094();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[][] {{2, 1, 5}, {3, 3, 7}}, 4, false),
           arguments(new int[][] {{2, 1, 5}, {3, 3, 7}}, 5, true),

@@ -1,4 +1,4 @@
-package com.leetcode.arrays.medium;
+package com.leetcode.strings.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,24 +11,24 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MaxConsecutiveOnesII_487Test {
+class NumberOfSubstringsWithOnly1s_1513Test {
 
-  private final MaxConsecutiveOnesII_487 solution = new MaxConsecutiveOnesII_487();
+  private final NumberOfSubstringsWithOnly1s_1513 solution = new NumberOfSubstringsWithOnly1s_1513();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 0, 1, 1, 0}, 4),
-          arguments(new int[] {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1}, 7));
+          arguments("0110111", 9),
+          arguments("101", 2),
+          arguments("111111", 21));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findMaxConsecutiveOnes(int[] input, int expectedResult) {
-
-    int actualResult = solution.findMaxConsecutiveOnes(input);
+  void numSub(String input, int expectedResult) {
+    int actualResult = solution.numSub(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

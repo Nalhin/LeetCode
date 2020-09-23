@@ -11,7 +11,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class WordPattern_290Test {
 
-  WordPattern_290 solution = new WordPattern_290();
+  private final WordPattern_290 solution = new WordPattern_290();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override

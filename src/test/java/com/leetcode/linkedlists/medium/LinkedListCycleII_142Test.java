@@ -15,13 +15,12 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class LinkedListCycleII_142Test {
 
-  LinkedListCycleII_142.HashSetSolution hashSetSolution = new LinkedListCycleII_142.HashSetSolution();
-  LinkedListCycleII_142.TwoPointerSolution twoPointerSolution = new LinkedListCycleII_142.TwoPointerSolution();
+  private final LinkedListCycleII_142.HashSetSolution hashSetSolution = new LinkedListCycleII_142.HashSetSolution();
+  private final LinkedListCycleII_142.TwoPointerSolution twoPointerSolution = new LinkedListCycleII_142.TwoPointerSolution();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(3, 2, 0, -4), 1),
           arguments(LinkedList.of(1, 2), 0),

@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class PalindromeLinkedList_234Test {
 
-  PalindromeLinkedList_234 solution = new PalindromeLinkedList_234();
+  private final PalindromeLinkedList_234 solution = new PalindromeLinkedList_234();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(1, 2, 3, 2, 1), true),
           arguments(LinkedList.of(1, 2, 3, 3, 2, 1), true),

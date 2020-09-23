@@ -13,7 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ReverseString_344Test {
 
-    ReverseString_344 solution = new ReverseString_344();
+    private final ReverseString_344 solution = new ReverseString_344();
 
     private static class TestArgumentsProvider implements ArgumentsProvider {
         @Override

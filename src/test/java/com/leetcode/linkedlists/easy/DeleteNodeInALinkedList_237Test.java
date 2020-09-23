@@ -16,12 +16,11 @@ import static com.leetcode.utils.LinkedList.findFirstOccurrence;
 
 class DeleteNodeInALinkedList_237Test {
 
-  DeleteNodeInALinkedList_237 solution = new DeleteNodeInALinkedList_237();
+  private final DeleteNodeInALinkedList_237 solution = new DeleteNodeInALinkedList_237();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(1,2,3,4), 3, LinkedList.of(1, 2, 4)),
           arguments(LinkedList.of(0, 1), 0, LinkedList.of(1)),

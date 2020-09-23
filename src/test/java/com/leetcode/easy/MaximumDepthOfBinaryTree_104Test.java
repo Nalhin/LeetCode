@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MaximumDepthOfBinaryTree_104Test {
 
-  MaximumDepthOfBinaryTree_104 solution = new MaximumDepthOfBinaryTree_104();
+  private final MaximumDepthOfBinaryTree_104 solution = new MaximumDepthOfBinaryTree_104();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(arguments(BinaryTree.of(3, 9, 20, null, null, 15, 7), 3));
     }
   }

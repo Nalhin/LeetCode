@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class InsertIntoASortedCircularLinkedList_708Test {
 
-  InsertIntoASortedCircularLinkedList_708 solution = new InsertIntoASortedCircularLinkedList_708();
+  private final InsertIntoASortedCircularLinkedList_708 solution = new InsertIntoASortedCircularLinkedList_708();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(3, 4, 1), 2, LinkedList.of(3, 4, 1, 2)),
           arguments(LinkedList.empty(), 1, LinkedList.of(1)),

@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class BullsAndCows_299Test {
 
-  BullsAndCows_299 solution = new BullsAndCows_299();
+  private final BullsAndCows_299 solution = new BullsAndCows_299();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments("1807", "7810", "1A3B"),
           arguments("1123", "0111", "1A1B"),

@@ -13,13 +13,12 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ReplaceElementsWithGreatestElementOnRightSide_1299Test {
 
-  ReplaceElementsWithGreatestElementOnRightSide_1299 solution =
+  private final ReplaceElementsWithGreatestElementOnRightSide_1299 solution =
       new ReplaceElementsWithGreatestElementOnRightSide_1299();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {17, 18, 5, 4, 6, 1}, new int[] {18, 6, 6, 6, 1, -1}),
           arguments(

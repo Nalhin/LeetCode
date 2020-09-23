@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class BestTimeToBuyAndSellStock_121Test {
 
-  BestTimeToBuyAndSellStock_121 solution = new BestTimeToBuyAndSellStock_121();
+  private final BestTimeToBuyAndSellStock_121 solution = new BestTimeToBuyAndSellStock_121();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {7, 1, 5, 3, 6, 4}, 5), arguments(new int[] {7, 6, 4, 3, 1}, 0));
     }

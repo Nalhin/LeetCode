@@ -13,7 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ValidParentheses_20Test {
 
-  ValidParentheses_20 solution = new ValidParentheses_20();
+  private final ValidParentheses_20 solution = new ValidParentheses_20();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override

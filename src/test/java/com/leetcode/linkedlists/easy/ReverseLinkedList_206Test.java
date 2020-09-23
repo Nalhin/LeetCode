@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ReverseLinkedList_206Test {
 
-  ReverseLinkedList_206 solution = new ReverseLinkedList_206();
+  private final ReverseLinkedList_206 solution = new ReverseLinkedList_206();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(arguments(LinkedList.of(1, 2, 3, 4, 5), LinkedList.of(5, 4, 3, 2, 1)));
     }
   }

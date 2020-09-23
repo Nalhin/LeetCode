@@ -15,15 +15,14 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class SumOfRootToLeftBinaryNumbers_1022Test {
 
-  SumOfRootToLeftBinaryNumbers_1022.BinaryShiftSolution binaryShiftSolution =
+  private final SumOfRootToLeftBinaryNumbers_1022.BinaryShiftSolution binaryShiftSolution =
       new SumOfRootToLeftBinaryNumbers_1022.BinaryShiftSolution();
-  SumOfRootToLeftBinaryNumbers_1022.StringBasedSolution stringBasedSolution =
+  private final SumOfRootToLeftBinaryNumbers_1022.StringBasedSolution stringBasedSolution =
       new SumOfRootToLeftBinaryNumbers_1022.StringBasedSolution();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(BinaryTree.of(1, 0, 1, 0, 1, 0, 1), 22),
           arguments(BinaryTree.of(1), 1),

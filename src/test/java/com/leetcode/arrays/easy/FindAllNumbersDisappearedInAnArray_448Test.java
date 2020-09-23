@@ -14,12 +14,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class FindAllNumbersDisappearedInAnArray_448Test {
 
-  FindAllNumbersDisappearedInAnArray_448 solution = new FindAllNumbersDisappearedInAnArray_448();
+  private final FindAllNumbersDisappearedInAnArray_448 solution = new FindAllNumbersDisappearedInAnArray_448();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(arguments(new int[] {4, 3, 2, 7, 8, 2, 3, 1}, List.of(5, 6)));
     }
   }

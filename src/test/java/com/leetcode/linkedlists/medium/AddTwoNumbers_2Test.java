@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class AddTwoNumbers_2Test {
 
-  AddTwoNumbers_2 solution = new AddTwoNumbers_2();
+  private final AddTwoNumbers_2 solution = new AddTwoNumbers_2();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(2, 4, 3), LinkedList.of(5, 6, 4), LinkedList.of(7, 0, 8)),
           arguments(

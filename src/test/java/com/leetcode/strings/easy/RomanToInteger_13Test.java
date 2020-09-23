@@ -13,7 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class RomanToInteger_13Test {
 
-  RomanToInteger_13 solution = new RomanToInteger_13();
+  private final RomanToInteger_13 solution = new RomanToInteger_13();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override

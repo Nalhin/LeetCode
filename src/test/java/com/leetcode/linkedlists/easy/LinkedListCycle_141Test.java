@@ -15,12 +15,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class LinkedListCycle_141Test {
 
-  LinkedListCycle_141 solution = new LinkedListCycle_141();
+  private final LinkedListCycle_141 solution = new LinkedListCycle_141();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(LinkedList.of(3, 2, 0, -4), 1, true),
           arguments(LinkedList.of(1, 2), 0, true),

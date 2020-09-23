@@ -13,12 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class SearchInsertPosition_35Test {
 
-  SearchInsertPosition_35 solution = new SearchInsertPosition_35();
+  private final SearchInsertPosition_35 solution = new SearchInsertPosition_35();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new int[] {1, 3, 5, 6}, 5, 2),
           arguments(new int[] {1, 3, 5, 6}, 1, 0),

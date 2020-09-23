@@ -11,12 +11,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class LongestCommonPrefix_14Test {
 
-  LongestCommonPrefix_14 solution = new LongestCommonPrefix_14();
+  private final LongestCommonPrefix_14 solution = new LongestCommonPrefix_14();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
           arguments(new String[] {"flower", "flow", "flight"}, "fl"),
           arguments(new String[] {"dog", "racecar", "car"}, ""));

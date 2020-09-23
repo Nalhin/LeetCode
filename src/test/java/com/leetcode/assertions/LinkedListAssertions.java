@@ -10,7 +10,7 @@ import java.util.Set;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 public class LinkedListAssertions {
-  private ListNode listHead;
+  private final ListNode listHead;
 
   public LinkedListAssertions(ListNode listHead) {
     this.listHead = listHead;
