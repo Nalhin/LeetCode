@@ -13,23 +13,22 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class LengthOfLastWord_58Test {
 
-    private final LengthOfLastWord_58 solution = new LengthOfLastWord_58();
+  private final LengthOfLastWord_58 solution = new LengthOfLastWord_58();
 
-    private static class TestArgumentsProvider implements ArgumentsProvider {
-        @Override
-        public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+  private static class TestArgumentsProvider implements ArgumentsProvider {
+    @Override
+    public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
-            return Stream.of(
-                    arguments("Hello World", 5), arguments("a ", 1));
-        }
+      return Stream.of(arguments("Hello World", 5), arguments("a ", 1));
     }
+  }
 
-    @ParameterizedTest
-    @ArgumentsSource(TestArgumentsProvider.class)
-    void lengthOfLastWord(String input, int expectedResult) {
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void lengthOfLastWord(String input, int expectedResult) {
 
-        int actualResult = solution.lengthOfLastWord(input);
+    int actualResult = solution.lengthOfLastWord(input);
 
-        assertThat(actualResult).isEqualTo(expectedResult);
-    }
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
 }

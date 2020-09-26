@@ -39,7 +39,6 @@ public class CanPlaceFlowers_605 {
 
     if (flowerbed[0] == 0 && flowerbed[1] == 0) {
       flowerbed[0] = 1;
-      n--;
     }
 
     if (flowerbed[flowerbed.length - 2] == 0 && flowerbed[flowerbed.length - 1] == 0) {

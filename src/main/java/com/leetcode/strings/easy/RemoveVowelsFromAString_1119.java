@@ -33,7 +33,7 @@ import java.util.Set;
 
 // leetcode submit region begin(Prohibit modification and deletion)
 public class RemoveVowelsFromAString_1119 {
-  Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
+  private static final Set<Character> vowels = Set.of('a', 'e', 'i', 'o', 'u');
 
   public String removeVowels(String S) {
     char[] old = S.toCharArray();

@@ -1,4 +1,4 @@
-package com.leetcode.strings.easy;
+package com.leetcode.arrays.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,28 +11,28 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class ReverseString_344Test {
+class AverageSalaryExcludingTheMinimumAndMaximum_1491Test {
 
-  private final ReverseString_344 solution = new ReverseString_344();
+  private final AverageSalaryExcludingTheMinimumAndMaximum_1491 solution =
+      new AverageSalaryExcludingTheMinimumAndMaximum_1491();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
-          arguments(new char[] {'h', 'e', 'l', 'l', 'o'}, new char[] {'o', 'l', 'l', 'e', 'h'}),
-          arguments(
-              new char[] {'H', 'a', 'n', 'n', 'a', 'h'},
-              new char[] {'h', 'a', 'n', 'n', 'a', 'H'}));
+          arguments(new int[] {4000, 3000, 1000, 2000}, 2500d),
+          arguments(new int[] {1000, 2000, 3000}, 2000d),
+          arguments(new int[] {6000, 5000, 4000, 3000, 2000, 1000}, 3500d),
+          arguments(new int[] {8000, 9000, 2000, 3000, 6000, 1000}, 4750d));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void longestCommonPrefix(char[] input, char[] expectedResult) {
+  void average(int[] input, double expectedResult) {
 
-    solution.reverseString(input);
+    double actualResult = solution.average(input);
 
-    assertThat(input).isEqualTo(expectedResult);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }
