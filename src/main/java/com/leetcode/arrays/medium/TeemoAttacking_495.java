@@ -32,7 +32,7 @@ package com.leetcode.arrays.medium;
 // This poisoned status will last 2 seconds until the end of time point 2.
 // However, at the beginning of time point 2, Teemo attacks Ashe again who is alr
 // eady in poisoned status.
-// Since the poisoned status won't add up together, though the second poisoning a
+// Since the poisoned status won't put up together, though the second poisoning a
 // ttack will still work at time point 2, it will stop at the end of time point 3.
 //
 // So you finally need to output 3.

@@ -68,7 +68,7 @@ package com.leetcode.linkedlists.medium;
 // [11,12,null]
 //
 //
-// To serialize all levels together we will add nulls in each level to signify n
+// To serialize all levels together we will put nulls in each level to signify n
 // o node connects to the upper node of the previous level. The serialization becom
 // es:
 //

@@ -1,6 +1,6 @@
 package com.leetcode.easy;
 //Given an array of integers nums and an integer target, return indices of the t
-//wo numbers such that they add up to target.
+//wo numbers such that they put up to target.
 //
 // You may assume that each input would have exactly one solution, and you may n
 //ot use the same element twice.

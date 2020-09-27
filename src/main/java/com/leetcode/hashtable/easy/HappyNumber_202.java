@@ -47,8 +47,8 @@ public class HappyNumber_202 {
     }
   }
   /*
-    O(logn) Runtime: 1 ms, faster than 90.08% of Java online submissions for Happy Number.
-    O(logn) Memory Usage: 36.4 MB, less than 79.30% of Java online submissions for Happy Number.
+    O(log(n)) Runtime: 1 ms, faster than 90.08% of Java online submissions for Happy Number.
+    O(log(n)) Memory Usage: 36.4 MB, less than 79.30% of Java online submissions for Happy Number.
   */
 
   public static class Floyd {
@@ -74,7 +74,7 @@ public class HappyNumber_202 {
     }
   }
   /*
-    O(logn) Runtime: 1 ms, faster than 90.08% of Java online submissions for Happy Number.
+    O(log(n)) Runtime: 1 ms, faster than 90.08% of Java online submissions for Happy Number.
     O(1)    Memory Usage: 36.1 MB, less than 96.34% of Java online submissions for Happy Number.
   */
 }
