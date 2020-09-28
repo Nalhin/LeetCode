@@ -11,25 +11,27 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class IntersectionOfTwoArrays_349Test {
+class IsomorphicStrings_205Test {
 
-  private final IntersectionOfTwoArrays_349 solution = new IntersectionOfTwoArrays_349();
+  private final IsomorphicStrings_205 solution = new IsomorphicStrings_205();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 2, 2, 1}, new int[] {2, 2}, new int[] {2}),
-          arguments(new int[] {4, 9, 5}, new int[] {9, 4, 9, 8, 4}, new int[] {4, 9}));
+          arguments("egg", "add", true),
+          arguments("foo", "bar", false),
+          arguments("ab", "aa", false),
+          arguments("paper", "title", true));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void intersection(int[] input1, int[] input2, int[] expectedResult) {
+  void isIsomorphic(String first, String second, boolean expectedResult) {
 
-    int[] actualResult = solution.intersection(input1, input2);
+    boolean actualResult = solution.isIsomorphic(first, second);
 
-    assertThat(actualResult).containsExactlyInAnyOrder(expectedResult);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }

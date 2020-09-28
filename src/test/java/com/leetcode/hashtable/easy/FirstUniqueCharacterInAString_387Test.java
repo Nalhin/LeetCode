@@ -11,25 +11,24 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class IntersectionOfTwoArrays_349Test {
+class FirstUniqueCharacterInAString_387Test {
 
-  private final IntersectionOfTwoArrays_349 solution = new IntersectionOfTwoArrays_349();
+  private final FirstUniqueCharacterInAString_387 solution =
+      new FirstUniqueCharacterInAString_387();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(
-          arguments(new int[] {1, 2, 2, 1}, new int[] {2, 2}, new int[] {2}),
-          arguments(new int[] {4, 9, 5}, new int[] {9, 4, 9, 8, 4}, new int[] {4, 9}));
+      return Stream.of(arguments("leetcode", 0), arguments("loveleetcode", 2));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void intersection(int[] input1, int[] input2, int[] expectedResult) {
+  void firstUniqChar(String first, int expectedResult) {
 
-    int[] actualResult = solution.intersection(input1, input2);
+    int actualResult = solution.firstUniqChar(first);
 
-    assertThat(actualResult).containsExactlyInAnyOrder(expectedResult);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }
