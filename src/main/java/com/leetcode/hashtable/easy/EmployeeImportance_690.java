@@ -1,4 +1,4 @@
-package com.leetcode.hashmap.easy;
+package com.leetcode.hashtable.easy;
 
 // You are given a data structure of employee information, which includes the emp
 // loyee's unique id, their importance value and their direct subordinates' id.
