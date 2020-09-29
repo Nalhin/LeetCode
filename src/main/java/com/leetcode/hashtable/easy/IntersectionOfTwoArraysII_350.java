@@ -71,8 +71,5 @@ public class IntersectionOfTwoArraysII_350 {
 /*
  O(n + m) Runtime: 10 ms, faster than 7.03% of Java online submissions for Intersection of Two Arrays II.
  O(n) Memory Usage: 39.2 MB, less than 97.97% of Java online submissions for Intersection of Two Arrays II.
-
-
-
 */
 // leetcode submit region end(Prohibit modification and deletion)
