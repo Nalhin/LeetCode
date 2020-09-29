@@ -56,21 +56,18 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
     Map<Character, Integer> map = new HashMap<>();
     int initial = 0;
     int max = 0;
+
     for (int i = 0; i < s.length(); i++) {
       char key = s.charAt(i);
 
       if (map.containsKey(key)) {
-        int pos = map.get(key);
-
-        for (int j = initial; j < pos; j++) {
-          map.remove(s.charAt(j));
-        }
-        initial = pos + 1;
+        initial = Math.max(map.get(key), initial);
       }
 
-      map.put(key, i);
-      max = Math.max(i - initial, max);
+      map.put(key, i + 1);
+      max = Math.max(i + 1 - initial, max);
     }
+
     return max;
   }
 }
