@@ -11,22 +11,24 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class FindTheDifference_389Test {
+class DefangingAnIPAddress_1108Test {
 
-  private final FindTheDifference_389 solution = new FindTheDifference_389();
+  private final DefangingAnIPAddress_1108 solution = new DefangingAnIPAddress_1108();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments("abcd", "abcde", 'e'),arguments("aa", "a", 'a'));
+      return Stream.of(
+          arguments("1.1.1.1", "1[.]1[.]1[.]1"),
+          arguments("255.100.50.0", "255[.]100[.]50[.]0"));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findTheDifference(String first, String second, char expectedResult) {
+  void defangIPaddr(String address, String expectedResult) {
 
-    char actualResult = solution.findTheDifference(first, second);
+    String actualResult = solution.defangIPaddr(address);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

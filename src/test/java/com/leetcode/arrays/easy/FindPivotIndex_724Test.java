@@ -1,4 +1,4 @@
-package com.leetcode.strings.easy;
+package com.leetcode.arrays.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,22 +11,22 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class FindTheDifference_389Test {
-
-  private final FindTheDifference_389 solution = new FindTheDifference_389();
+class FindPivotIndex_724Test {
+  private final FindPivotIndex_724 solution = new FindPivotIndex_724();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments("abcd", "abcde", 'e'),arguments("aa", "a", 'a'));
+      return Stream.of(
+          arguments(new int[] {1, 7, 3, 6, 5, 6}, 3), arguments(new int[] {1, 2, 3}, -1));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findTheDifference(String first, String second, char expectedResult) {
+  void heightChecker(int[] input, int expectedResult) {
 
-    char actualResult = solution.findTheDifference(first, second);
+    int actualResult = solution.pivotIndex(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
