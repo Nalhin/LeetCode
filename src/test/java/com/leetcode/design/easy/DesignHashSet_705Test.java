@@ -1,11 +1,11 @@
-package com.leetcode.hashtable.easy;
+package com.leetcode.design.easy;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
-import com.leetcode.hashtable.easy.DesignHashSet_705.MyHashSet;
+import com.leetcode.design.easy.DesignHashSet_705.MyHashSet;
 
 class DesignHashSet_705Test {
 

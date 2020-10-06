@@ -1,11 +1,11 @@
-package com.leetcode.hashtable.easy;
+package com.leetcode.design.easy;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import com.leetcode.hashtable.easy.DesignHashMap_706.MyHashMap;
+import com.leetcode.design.easy.DesignHashMap_706.MyHashMap;
 
 class DesignHashMap_706Test {
   private static MyHashMap emptyHashMap() {
