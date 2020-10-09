@@ -60,28 +60,25 @@ package com.leetcode.strings.easy;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
+import java.util.Set;
 
 public class ValidParentheses_20 {
 
-  static final Map<Character, Character> mappings = Map.of('(', ')', '[', ']', '{', '}');
+  private static final Set<Character> closing = Set.of(')', ']', '}');
+  private static final Map<Character, Character> mapping = Map.of('(', ')', '[', ']', '{', '}');
 
   public boolean isValid(String s) {
-    if (s.length() <= 1) {
-      return false;
-    }
-
     Deque<Character> stack = new ArrayDeque<>();
 
-    for (int i = 0; i < s.length(); i++) {
-      char current = s.charAt(i);
-      if (mappings.containsKey(current)) {
-        stack.push(current);
-      } else {
+    for (char c : s.toCharArray()) {
+      if (mapping.containsKey(c)) {
+        stack.push(mapping.get(c));
+      } else if (closing.contains(c)) {
         if (stack.isEmpty()) {
           return false;
         }
-        char top = stack.pop();
-        if (current != mappings.get(top)) {
+        char expected = stack.pop();
+        if (expected != c) {
           return false;
         }
       }

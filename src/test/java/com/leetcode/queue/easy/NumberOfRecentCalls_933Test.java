@@ -1,10 +1,9 @@
-package com.leetcode.queuestack.easy;
+package com.leetcode.queue.easy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static com.leetcode.queuestack.easy.NumberOfRecentCalls_933.RecentCounter;
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 class NumberOfRecentCalls_933Test {
@@ -15,7 +14,7 @@ class NumberOfRecentCalls_933Test {
     @Test
     @DisplayName("Should remove outdated ping")
     void removesOutdated() {
-      RecentCounter recentCounter = new RecentCounter();
+      NumberOfRecentCalls_933.RecentCounter recentCounter = new NumberOfRecentCalls_933.RecentCounter();
       recentCounter.ping(1);
 
       int actualResult = recentCounter.ping(3002);

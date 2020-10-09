@@ -1,4 +1,4 @@
-package com.leetcode.hashtable.easy;
+package com.leetcode.design.easy;
 
 // Design a HashSet without using any built-in hash table libraries.
 //
