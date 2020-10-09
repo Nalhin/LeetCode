@@ -1,4 +1,4 @@
-package com.leetcode.linkedlists.medium;
+package com.leetcode.design.medium;
 // Design your implementation of the linked list. You can choose to use a singly
 // or doubly linked list.
 // A node in a singly linked list should have two attributes: val and next. val i

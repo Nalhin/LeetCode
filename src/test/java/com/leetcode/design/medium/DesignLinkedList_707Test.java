@@ -1,4 +1,4 @@
-package com.leetcode.linkedlists.medium;
+package com.leetcode.design.medium;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Nested;

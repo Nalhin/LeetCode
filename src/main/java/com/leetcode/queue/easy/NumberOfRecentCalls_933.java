@@ -1,4 +1,4 @@
-package com.leetcode.queuestack.easy;
+package com.leetcode.queue.easy;
 
 // You have a RecentCounter class which counts the number of recent requests with
 // in a certain time frame.

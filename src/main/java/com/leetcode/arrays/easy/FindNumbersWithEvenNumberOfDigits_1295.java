@@ -41,7 +41,7 @@ public class FindNumbersWithEvenNumberOfDigits_1295 {
     int result = 0;
 
     for (int num : nums) {
-      if (Integer.toString(num).length() % 2 == 0) {
+      if (((int) Math.log10(num) + 1) % 2 == 0) {
         result++;
       }
     }
@@ -50,8 +50,8 @@ public class FindNumbersWithEvenNumberOfDigits_1295 {
 }
 
 /*
-    Runtime: 4 ms, faster than 12.16% of Java online submissions for Find Numbers with Even Number of Digits.
-    Memory Usage: 41.6 MB, less than 6.85% of Java online submissions for Find Numbers with Even Number of Digits.
+  O(n) Runtime: 1 ms, faster than 95.60% of Java online submissions for Find Numbers with Even Number of Digits.
+  O(1) Memory Usage: 38.6 MB, less than 94.27% of Java online submissions for Find Numbers with Even Number of
 */
 
 // leetcode submit region end(Prohibit modification and deletion)
