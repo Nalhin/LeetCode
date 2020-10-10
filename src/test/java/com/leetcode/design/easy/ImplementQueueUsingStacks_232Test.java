@@ -21,6 +21,7 @@ class ImplementQueueUsingStacks_232Test {
       softAssertions.assertThat(queue.peek()).isEqualTo(1);
       softAssertions.assertThat(queue.pop()).isEqualTo(1);
       softAssertions.assertThat(queue.empty()).isFalse();
+      softAssertions.assertAll();
     }
   }
 
@@ -39,6 +40,7 @@ class ImplementQueueUsingStacks_232Test {
       softAssertions.assertThat(queue.peek()).isEqualTo(1);
       softAssertions.assertThat(queue.pop()).isEqualTo(1);
       softAssertions.assertThat(queue.empty()).isFalse();
+      softAssertions.assertAll();
     }
   }
 }

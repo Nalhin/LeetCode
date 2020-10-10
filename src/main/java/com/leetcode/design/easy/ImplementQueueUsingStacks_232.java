@@ -109,7 +109,7 @@ public class ImplementQueueUsingStacks_232 {
 
     /** Push element x to the back of queue. */
     public void push(int x) {
-      if (!stack.isEmpty()) {
+      if (stack.isEmpty()) {
         front = x;
       }
       stack.push(x);
@@ -132,7 +132,7 @@ public class ImplementQueueUsingStacks_232 {
 
     /** Returns whether the queue is empty. */
     public boolean empty() {
-      return stack.isEmpty() || reversed.isEmpty();
+      return stack.isEmpty() && reversed.isEmpty();
     }
   }
 }

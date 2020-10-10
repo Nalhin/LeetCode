@@ -20,6 +20,7 @@ class ImplementStackUsingQueues_225Test {
       softly.assertThat(stack.top()).isEqualTo(2);
       softly.assertThat(stack.pop()).isEqualTo(2);
       softly.assertThat(stack.empty()).isFalse();
+      softly.assertAll();
     }
   }
 }
