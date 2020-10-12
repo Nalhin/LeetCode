@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.bst.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;

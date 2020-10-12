@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.bst.easy;
 
 // Given a binary tree, find its maximum depth.
 //
@@ -32,31 +32,21 @@ import com.leetcode.utils.BinaryTree.TreeNode;
  * TreeNode right) { this.val = val; this.left = left; this.right = right; } }
  */
 public class MaximumDepthOfBinaryTree_104 {
-  int top = 0;
-
   public int maxDepth(TreeNode root) {
-    if (root != null) {
-      treeTraversal(root, 1);
-    }
-    return top;
+    return maxDepthDfs(root, 0);
   }
 
-  private void treeTraversal(TreeNode node, int level) {
-    if (node.left != null) {
-      treeTraversal(node.left, level + 1);
-    }
-    if (node.right != null) {
-      treeTraversal(node.right, level + 1);
+  private int maxDepthDfs(TreeNode root, int depth){
+    if(root == null){
+      return depth;
     }
 
-    if (node.right == null && node.left == null) {
-      top = Math.max(level, top);
-    }
+    return Math.max(maxDepthDfs(root.right, depth + 1), maxDepthDfs(root.left, depth + 1));
   }
 }
 
 /*
-    Runtime: 0 ms, faster than 100.00% of Java online submissions for Maximum Depth of Binary Tree.
-    Memory Usage: 39.4 MB, less than 76.08% of Java online submissions for Maximum Depth of Binary Tree.
+  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Maximum Depth of Binary Tree.
+  O(nlog(n)) Memory Usage: 39.4 MB, less than 76.08% of Java online submissions for Maximum Depth of Binary Tree.
 */
 // leetcode submit region end(Prohibit modification and deletion)
