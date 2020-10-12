@@ -100,6 +100,11 @@ public class SerializeAndDeserializeBST_449 {
     return new TreeNode(Integer.parseInt(node));
   }
 }
+/*
+ O(n) Runtime: 8 ms, faster than 57.16% of Java online submissions for Serialize and Deserialize BST.
+ O(n) Memory Usage: 39.6 MB, less than 7.96% of Java online submissions for Serialize and Deserialize BST.
+*/
+
 // Your Codec object will be instantiated and called as such:
 // Codec ser = new Codec();
 // Codec deser = new Codec();
