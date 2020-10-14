@@ -1,4 +1,4 @@
-package com.leetcode.arrays.easy;
+package com.leetcode.bitmanipulation.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,25 +11,21 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class BinarySearch_704Test {
-
-  private final BinarySearch_704 solution = new BinarySearch_704();
+class PowerOfFour_342Test {
+  private final PowerOfFour_342 solution = new PowerOfFour_342();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(
-          arguments(new int[] {-1, 0, 3, 5, 9, 12}, 9, 4),
-          arguments(new int[] {-1, 0, 3, 5, 9, 12}, 2, -1),
-          arguments(new int[] {5}, 5, 0));
+      return Stream.of(arguments(16, true), arguments(5, false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void search(int[] array, int target, int expectedResult) {
+  void isPowerOfFour(int input, boolean expectedResult) {
 
-    int actualResult = solution.search(array, target);
+    boolean actualResult = solution.isPowerOfFour(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
