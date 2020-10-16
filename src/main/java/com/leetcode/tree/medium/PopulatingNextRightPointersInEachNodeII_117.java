@@ -1,7 +1,6 @@
 package com.leetcode.tree.medium;
 
-// You are given a perfect binary tree where all leaves are on the same level, an
-// d every parent has two children. The binary tree has the following definition:
+// Given a binary tree
 //
 //
 // struct Node {
@@ -33,23 +32,23 @@ package com.leetcode.tree.medium;
 //
 //
 //
-// Input: root = [1,2,3,4,5,6,7]
-// Output: [1,#,2,3,#,4,5,6,7,#]
-// Explanation: Given the above perfect binary tree (Figure A), your function sho
-// uld populate each next pointer to point to its next right node, just like in Fig
-// ure B. The serialized output is in level order as connected by the next pointers
-// , with '#' signifying the end of each level.
+// Input: root = [1,2,3,4,5,null,7]
+// Output: [1,#,2,3,#,4,5,7,#]
+// Explanation: Given the above binary tree (Figure A), your function should popu
+// late each next pointer to point to its next right node, just like in Figure B. T
+// he serialized output is in level order as connected by the next pointers, with '
+// #' signifying the end of each level.
 //
 //
 //
 // Constraints:
 //
 //
-// The number of nodes in the given tree is less than 4096.
-// -1000 <= node.val <= 1000
+// The number of nodes in the given tree is less than 6000.
+// -100 <= node.val <= 100
 //
 // Related Topics Tree Depth-first Search
-// 👍 2407 👎 147
+// 👍 1816 👎 187
 
 // leetcode submit region begin(Prohibit modification and deletion)
 /*
@@ -75,19 +74,37 @@ class Node {
 };
 */
 
-public class PopulatingNextRightPointersInEachNode_116 {
+public class PopulatingNextRightPointersInEachNodeII_117 {
   public Node connect(Node root) {
-    connectDfs(root, null);
-    return root;
-  }
+    Node curr = root;
+    Node prev = null;
+    Node first = null;
 
-  public void connectDfs(Node root, Node right) {
-    if (root == null) {
-      return;
+    while (curr != null) {
+      while (curr != null) {
+        if (curr.left != null) {
+          if (prev != null) {
+            prev.next = curr.left;
+          } else {
+            first = curr.left;
+          }
+          prev = curr.left;
+        }
+        if (curr.right != null) {
+          if (prev != null) {
+            prev.next = curr.right;
+          } else {
+            first = curr.right;
+          }
+          prev = curr.right;
+        }
+        curr = curr.next;
+      }
+      curr = first;
+      first = null;
+      prev = null;
     }
-    root.next = right;
-    connectDfs(root.left, root.right);
-    connectDfs(root.right, right != null ? right.left : null);
+    return root;
   }
 
   private static class Node {
@@ -110,4 +127,8 @@ public class PopulatingNextRightPointersInEachNode_116 {
     }
   }
 }
+/*
+ O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Populating Next Right Pointers in Each Node II.
+ O(1) Memory Usage: 38.8 MB, less than 7.80% of Java online submissions for Populating Next Right Pointers in Each Node II.
+*/
 // leetcode submit region end(Prohibit modification and deletion)
