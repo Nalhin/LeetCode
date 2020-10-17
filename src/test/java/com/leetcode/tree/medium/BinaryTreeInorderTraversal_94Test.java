@@ -17,7 +17,10 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class BinaryTreeInorderTraversal_94Test {
 
-  private final BinaryTreeInorderTraversal_94 solution = new BinaryTreeInorderTraversal_94();
+  private final BinaryTreeInorderTraversal_94.Iterative solutionIterative =
+      new BinaryTreeInorderTraversal_94.Iterative();
+  private final BinaryTreeInorderTraversal_94.Recursive solutionRecursive =
+      new BinaryTreeInorderTraversal_94.Recursive();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -33,8 +36,16 @@ class BinaryTreeInorderTraversal_94Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void inorderTraversal(TreeNode root, List<Integer> expectedResult) {
-    List<Integer> actualResult = solution.inorderTraversal(root);
+  void inorderTraversalIterative(TreeNode root, List<Integer> expectedResult) {
+    List<Integer> actualResult = solutionIterative.inorderTraversal(root);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void inorderTraversalRecursive(TreeNode root, List<Integer> expectedResult) {
+    List<Integer> actualResult = solutionRecursive.inorderTraversal(root);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

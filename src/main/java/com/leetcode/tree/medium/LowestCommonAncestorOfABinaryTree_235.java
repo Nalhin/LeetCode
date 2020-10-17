@@ -74,7 +74,7 @@ public class LowestCommonAncestorOfABinaryTree_235 {
   }
   /*
    O(n)  Runtime: 4 ms, faster than 100.00% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
-   O(log(n))    Memory Usage: 41.2 MB, less than 14.05% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
+   O(h)    Memory Usage: 41.2 MB, less than 14.05% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
   */
 
   static class Iterative {
@@ -82,7 +82,9 @@ public class LowestCommonAncestorOfABinaryTree_235 {
       HashMap<TreeNode, TreeNode> parents = new HashMap<>();
       Deque<TreeNode> deque = new ArrayDeque<>();
       deque.push(root);
-      while (!deque.isEmpty()) {
+      parents.put(root, null);
+
+      while (!parents.containsKey(p) || !parents.containsKey(q)) {
         TreeNode curr = deque.pop();
 
         if (curr.left != null) {
@@ -95,22 +97,15 @@ public class LowestCommonAncestorOfABinaryTree_235 {
           deque.push(curr.right);
         }
       }
-      TreeNode curr = q;
       HashSet<TreeNode> set = new HashSet<>();
-      while (curr != null) {
-        curr = parents.get(curr);
-        if (curr != null) {
-          set.add(curr);
-        }
+      while (q != null) {
+        set.add(q);
+        q = parents.get(q);
       }
-      curr = p;
-      while (curr != null) {
-        curr = parents.get(curr);
-        if (set.contains(curr)) {
-          return curr;
-        }
+      while (!set.contains(p)) {
+        p = parents.get(p);
       }
-      return null;
+      return p;
     }
   }
   /*

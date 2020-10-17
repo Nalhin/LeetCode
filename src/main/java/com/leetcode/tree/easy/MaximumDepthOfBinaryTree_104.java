@@ -47,6 +47,6 @@ public class MaximumDepthOfBinaryTree_104 {
 
 /*
   O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Maximum Depth of Binary Tree.
-  O(nlog(n)) Memory Usage: 39.4 MB, less than 76.08% of Java online submissions for Maximum Depth of Binary Tree.
+  O(h) Memory Usage: 39.4 MB, less than 76.08% of Java online submissions for Maximum Depth of Binary Tree.
 */
 // leetcode submit region end(Prohibit modification and deletion)

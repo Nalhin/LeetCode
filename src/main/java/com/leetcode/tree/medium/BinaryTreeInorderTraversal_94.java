@@ -69,27 +69,54 @@ import java.util.*;
  * TreeNode right) { this.val = val; this.left = left; this.right = right; } }
  */
 public class BinaryTreeInorderTraversal_94 {
-  public List<Integer> inorderTraversal(TreeNode root) {
-    List<Integer> result = new ArrayList<>();
-    Deque<TreeNode> stack = new ArrayDeque<>();
 
-    TreeNode curr = root;
+  static class Iterative {
 
-    while (curr != null || !stack.isEmpty()) {
-      while (curr != null) {
-        stack.push(curr);
-        curr = curr.left;
+    public List<Integer> inorderTraversal(TreeNode root) {
+      List<Integer> result = new ArrayList<>();
+      Deque<TreeNode> stack = new ArrayDeque<>();
+
+      TreeNode curr = root;
+
+      while (curr != null || !stack.isEmpty()) {
+        while (curr != null) {
+          stack.push(curr);
+          curr = curr.left;
+        }
+        curr = stack.pop();
+        result.add(curr.val);
+        curr = curr.right;
       }
-      curr = stack.pop();
-      result.add(curr.val);
-      curr = curr.right;
+
+      return result;
+    }
+  }
+  /*
+  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Inorder Traversal.
+  O(n) Memory Usage: 37.1 MB, less than 6.96% of Java online submissions for Binary Tree Inorder Travers
+  */
+
+  static class Recursive {
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+      List<Integer> result = new ArrayList<>();
+      inorderTraversalDfs(root, result);
+      return result;
     }
 
-    return result;
+    private void inorderTraversalDfs(TreeNode root, List<Integer> result) {
+      if (root == null) {
+        return;
+      }
+      inorderTraversalDfs(root.left, result);
+      result.add(root.val);
+      inorderTraversalDfs(root.right, result);
+    }
   }
+  /*
+  O(n)  Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Inorder Traversal.
+  O(n) Memory Usage: 37.3 MB, less than 6.87% of Java online submissions for Binary Tree Inorder Traversal.
+   */
 }
-/*
-O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Inorder Traversal.
-O(n) Memory Usage: 37.1 MB, less than 6.96% of Java online submissions for Binary Tree Inorder Travers
- */
+
 // leetcode submit region end(Prohibit modification and deletion)

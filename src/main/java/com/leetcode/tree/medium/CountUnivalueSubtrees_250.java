@@ -65,6 +65,6 @@ public class CountUnivalueSubtrees_250 {
 }
 /*
  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Count Univalue Subtrees.
- O(nlog(n)) Memory Usage: 38.4 MB, less than 14.77% of Java online submissions for Count Univalue Subtrees
+ O(h) Memory Usage: 38.4 MB, less than 14.77% of Java online submissions for Count Univalue Subtrees
 */
 // leetcode submit region end(Prohibit modification and deletion)

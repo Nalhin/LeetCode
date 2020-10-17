@@ -60,7 +60,7 @@ public class InvertBinaryTree_226 {
   }
   /*
     O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Invert Binary Tree.
-    O(log(n)) Memory Usage: 36.2 MB, less than 16.12% of Java online submissions for Invert Binary Tree.
+    O(h) Memory Usage: 36.2 MB, less than 16.12% of Java online submissions for Invert Binary Tree.
   */
 
   static class Iterative {
@@ -91,8 +91,8 @@ public class InvertBinaryTree_226 {
     }
   }
   /*
-  O(N) Runtime: 0 ms, faster than 100.00% of Java online submissions for Invert Binary Tree.
-  O(log(n)) Memory Usage: 36.1 MB, less than 16.12% of Java online submissions for Invert Binary Tree.
+  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Invert Binary Tree.
+  O(h) Memory Usage: 36.1 MB, less than 16.12% of Java online submissions for Invert Binary Tree.
   */
 }
 // leetcode submit region end(Prohibit modification and deletion)

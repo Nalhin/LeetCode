@@ -109,7 +109,7 @@ public class SymmetricTree_101 {
   }
   /*
    O(n)  Runtime: 1 ms, faster than 32.65% of Java online submissions for Symmetric Tree.
-   O(log(n)) Memory Usage: 38.4 MB, less than 14.44% of Java online submissions for Symmetric Tree.
+   O(h) Memory Usage: 38.4 MB, less than 14.44% of Java online submissions for Symmetric Tree.
   */
 }
 // leetcode submit region end(Prohibit modification and deletion)
