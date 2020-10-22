@@ -63,6 +63,10 @@ package com.leetcode.arrays.medium;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/*
+ O(n) Runtime: 5 ms, faster than 68.35% of Java online submissions for Asteroid Collision.
+ O(n)  Memory Usage: 40 MB, less than 9.30% of Java online submissions for Asteroid Collision
+*/
 public class AsteroidCollision_735 {
   public int[] asteroidCollision(int[] asteroids) {
     Deque<Integer> stack = new ArrayDeque<>();
