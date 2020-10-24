@@ -13,32 +13,35 @@ import java.util.stream.Stream;
 import static com.leetcode.assertions.BinaryTreeAssertions.assertThatBinaryTree;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class InsertIntoABinarySearchTree_701Test {
+class DeleteNodeInABST_450Test {
 
-  private final InsertIntoABinarySearchTree_701.Iterative solutionIterative =
-      new InsertIntoABinarySearchTree_701.Iterative();
-  private final InsertIntoABinarySearchTree_701.Recursive solutionRecursive =
-      new InsertIntoABinarySearchTree_701.Recursive();
+  private final DeleteNodeInABST_450.Iterative solutionIterative =
+      new DeleteNodeInABST_450.Iterative();
+  private final DeleteNodeInABST_450.Recursive solutionRecursive =
+      new DeleteNodeInABST_450.Recursive();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
           arguments(
-              BinaryTree.of(40, 20, 60, 10, 30, 50, 70),
-              25,
-              BinaryTree.of(40, 20, 60, 10, 30, 50, 70, null, null, 25)),
+              BinaryTree.of(5, 3, 6, 2, 4, null, 7), 3, BinaryTree.of(5, 4, 6, 2, null, null, 7)),
           arguments(
-              BinaryTree.of(4, 2, 7, 1, 3, null, null, null, null, null, null),
-              5,
-              BinaryTree.of(4, 2, 7, 1, 3, 5)));
+              BinaryTree.of(5, 3, 6, 2, 4, null, 7), 0, BinaryTree.of(5, 3, 6, 2, 4, null, 7)),
+          arguments(BinaryTree.of(5, 3, 6, 2, 4, null, 7), 5, BinaryTree.of(6, 3, 7, 2, 4)),
+          arguments(
+              BinaryTree.of(5, 3, 6, 2, 4, null, 7), 0, BinaryTree.of(5, 3, 6, 2, 4, null, 7)),
+          arguments(
+              BinaryTree.of(50, 30, 70, null, 40, 60, 80),
+              50,
+              BinaryTree.of(60, 30, 70, null, 40, null, 80)));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
   void insertIntoBSTIterative(TreeNode root, int val, TreeNode expectedResult) {
-    TreeNode actualResult = solutionIterative.insertIntoBST(root, val);
+    TreeNode actualResult = solutionIterative.deleteNode(root, val);
 
     assertThatBinaryTree(actualResult).isEqualTo(expectedResult);
   }
@@ -46,7 +49,7 @@ class InsertIntoABinarySearchTree_701Test {
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
   void insertIntoBSTRecursive(TreeNode root, int val, TreeNode expectedResult) {
-    TreeNode actualResult = solutionRecursive.insertIntoBST(root, val);
+    TreeNode actualResult = solutionRecursive.deleteNode(root, val);
 
     assertThatBinaryTree(actualResult).isEqualTo(expectedResult);
   }

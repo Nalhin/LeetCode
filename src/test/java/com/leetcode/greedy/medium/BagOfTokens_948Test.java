@@ -11,28 +11,27 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MinimumNumberOfArrowsToBurstBalloons_452Test {
+class BagOfTokens_948Test {
 
-  private final MinimumNumberOfArrowsToBurstBalloons_452 solution =
-      new MinimumNumberOfArrowsToBurstBalloons_452();
+  private final BagOfTokens_948 solution = new BagOfTokens_948();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[][] {{10, 16}, {2, 8}, {1, 6}, {7, 12}}, 2),
-          arguments(new int[][] {{1, 2}, {3, 4}, {5, 6}, {7, 8}}, 4),
-          arguments(new int[][] {{1, 2}, {2, 3}, {3, 4}, {4, 5}}, 2),
-          arguments(new int[][] {{1, 2}}, 1),
-          arguments(new int[][] {{2, 3}, {2, 3}}, 1));
+          arguments(new int[] {100}, 50, 0),
+          arguments(new int[] {100, 200}, 150, 1),
+          arguments(new int[] {100, 200, 300, 400}, 200, 2),
+          arguments(new int[] {81, 91, 31}, 73, 1),
+          arguments(new int[] {71, 55, 82}, 54, 0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findMinArrowShots(int[][] intervals, int expectedResult) {
+  void bagOfTokensScore(int[] tokens, int power, int expectedResult) {
 
-    int actualResult = solution.findMinArrowShots(intervals);
+    int actualResult = solution.bagOfTokensScore(tokens, power);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

@@ -54,32 +54,52 @@ import com.leetcode.utils.BinaryTree.TreeNode;
  * TreeNode right) { this.val = val; this.left = left; this.right = right; } }
  */
 public class InsertIntoABinarySearchTree_701 {
-  public TreeNode insertIntoBST(TreeNode root, int val) {
-    if (root == null) {
-      return new TreeNode(val);
-    }
-    TreeNode node = root;
-    TreeNode prev = node;
-    while (node != null) {
-      prev = node;
-      if (node.val > val) {
-        node = node.left;
-      } else {
-        node = node.right;
-      }
-    }
 
-    if (prev.val > val) {
-      prev.left = new TreeNode(val);
-    } else {
-      prev.right = new TreeNode(val);
+  /*
+    O(h) Runtime: 0 ms, faster than 100.00% of Java online submissions for Insert into a Binary Search Tree.
+    O(1) Memory Usage: 39.4 MB, less than 99.24% of Java online submissions for Insert into a Binary Search Tree.
+  */
+  static class Iterative {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+      if (root == null) {
+        return new TreeNode(val);
+      }
+      TreeNode node = root;
+      TreeNode prev = node;
+      while (node != null) {
+        prev = node;
+        if (node.val > val) {
+          node = node.left;
+        } else {
+          node = node.right;
+        }
+      }
+
+      if (prev.val > val) {
+        prev.left = new TreeNode(val);
+      } else {
+        prev.right = new TreeNode(val);
+      }
+      return root;
     }
-    return root;
+  }
+  /*
+  O(h) Runtime: 0 ms, faster than 100.00% of Java online submissions for Insert into a Binary Search Tree.
+  O(h) Memory Usage: 39.4 MB, less than 80.23% of Java online submissions for Insert into a Binary Search Tree.
+  */
+  static class Recursive {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+      if (root == null) {
+        return new TreeNode(val);
+      }
+      if (root.val > val) {
+        root.left = insertIntoBST(root.left, val);
+      } else {
+        root.right = insertIntoBST(root.right, val);
+      }
+      return root;
+    }
   }
 }
-/*
-  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Insert into a Binary Search Tree.
-  O(1) Memory Usage: 39.4 MB, less than 99.24% of Java online submissions for Insert into a Binary Search Tree.
-*/
 
 // leetcode submit region end(Prohibit modification and deletion)
