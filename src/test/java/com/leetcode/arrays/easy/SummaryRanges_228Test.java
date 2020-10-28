@@ -1,4 +1,4 @@
-package com.leetcode.arrays.medium;
+package com.leetcode.arrays.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,26 +11,27 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class DailyTemperatures_739Test {
+class SummaryRanges_228Test {
 
-  private final DailyTemperatures_739 solution = new DailyTemperatures_739();
+  private final SummaryRanges_228 solution = new SummaryRanges_228();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(
-              new int[] {73, 74, 75, 71, 69, 72, 76, 73}, new int[] {1, 1, 4, 2, 1, 1, 0, 0}));
+          arguments(new int[] {0, 1, 2, 4, 5, 7}, List.of("0->2", "4->5", "7")),
+          arguments(new int[] {0, 2, 3, 4, 6, 8, 9}, List.of("0", "2->4", "6", "8->9")),
+          arguments(new int[] {}, Collections.emptyList()),
+          arguments(new int[] {-1}, List.of("-1")));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void dailyTemperatures(int[] input, int[] expectedResult) {
-    int[] actualResult = solution.dailyTemperatures(input);
+  void summaryRanges(int[] input, List<String> expectedResult) {
+    List<String> actualResult = solution.summaryRanges(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
