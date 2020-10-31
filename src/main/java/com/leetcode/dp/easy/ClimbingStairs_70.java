@@ -42,13 +42,16 @@ package com.leetcode.dp.easy;
 */
 public class ClimbingStairs_70 {
   public int climbStairs(int n) {
+    if (n == 1) {
+      return 1;
+    }
 
-    int prev = 0;
-    int prevPrev = 0;
+    int prev = 2;
+    int prevPrev = 1;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 3; i <= n; i++) {
       int temp = prev;
-      prev = prevPrev + prevPrev + 1;
+      prev = prev + prevPrev;
       prevPrev = temp;
     }
 
