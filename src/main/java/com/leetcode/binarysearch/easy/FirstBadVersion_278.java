@@ -1,4 +1,4 @@
-package com.leetcode.design.easy;
+package com.leetcode.binarysearch.easy;
 
 // You are a product manager and currently leading a team to develop a new produc
 // t. Unfortunately, the latest version of your product fails the quality check. Si
