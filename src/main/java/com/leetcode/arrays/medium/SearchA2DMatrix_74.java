@@ -76,7 +76,7 @@ public class SearchA2DMatrix_74 {
       int left = 0;
       int right = matrix[found].length - 1;
       while (left <= right) {
-        int mid = (left + right) >> 1;
+        int mid = (left + right) >>> 1;
         int curr = matrix[found][mid];
 
         if (curr == target) {
@@ -107,7 +107,7 @@ public class SearchA2DMatrix_74 {
       int left = 0;
       int right = m * n - 1;
       while (left <= right) {
-        int mid = (left + right) >> 1;
+        int mid = (left + right) >>> 1;
         int curr = matrix[mid / m][mid % m];
         if (curr == target) {
           return true;

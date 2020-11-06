@@ -59,7 +59,7 @@ public class SearchInASortedArrayOfUnknownSize_702 {
     }
 
     while (left <= right) {
-      int mid = (left + right) >> 1;
+      int mid = (left + right) >>> 1;
       int midVal = reader.get(mid);
 
       if (midVal != Integer.MAX_VALUE && reader.get(mid + 1) == Integer.MAX_VALUE) {
@@ -75,7 +75,7 @@ public class SearchInASortedArrayOfUnknownSize_702 {
     left = 0;
 
     while (left <= right) {
-      int mid = (left + right) >> 1;
+      int mid = (left + right) >>> 1;
       int midVal = reader.get(mid);
       if (midVal == target) {
         return mid;

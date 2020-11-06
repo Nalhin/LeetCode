@@ -46,7 +46,7 @@ public class ConvertSortedArrayToBinarySearchTree_108 {
     if (first > last) {
       return null;
     }
-    int mid = (first + last) >> 1;
+    int mid = (first + last) >>> 1;
 
     TreeNode root = new TreeNode(nums[mid]);
 

@@ -92,7 +92,7 @@ public class FindSmallestCommonElementInAllRows_1198 {
 
     private int binarySearch(int[] array, int left, int right, int target) {
       while (left <= right) {
-        int mid = (left + right) >> 1;
+        int mid = (left + right) >>> 1;
         int curr = array[mid];
 
         if (curr == target) {

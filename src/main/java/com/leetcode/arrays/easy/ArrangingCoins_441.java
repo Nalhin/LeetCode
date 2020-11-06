@@ -47,7 +47,7 @@ public class ArrangingCoins_441 {
     long right = n;
 
     while (left <= right) {
-      long mid = (left + right) >> 1;
+      long mid = (left + right) >>> 1;
       long val = stairCount(mid);
 
       if (val == n) {

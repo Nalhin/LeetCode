@@ -40,7 +40,7 @@ public class SqrtX_69 {
     int right = x / 2;
 
     while (left <= right) {
-      int mid = (left + right) >> 1;
+      int mid = (left + right) >>> 1;
       long curr = (long) mid * mid;
       if (curr < x) {
         left = mid + 1;
