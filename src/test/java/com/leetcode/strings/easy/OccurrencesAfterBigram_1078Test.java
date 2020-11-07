@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MostCommonWord_819Test {
+class OccurrencesAfterBigram_1078Test {
 
-  private final MostCommonWord_819 solution = new MostCommonWord_819();
+  private final OccurrencesAfterBigram_1078 solution = new OccurrencesAfterBigram_1078();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -21,18 +21,19 @@ class MostCommonWord_819Test {
 
       return Stream.of(
           arguments(
-              "Bob hit a ball, the hit BALL flew far after it was hit.",
-              new String[] {"hit"},
-              "ball"),
-          arguments("a, a, a, a, b,b,b,c, c", new String[] {"a"}, "b"));
+              "alice is a good girl she is a good student",
+              "a",
+              "good",
+              new String[] {"girl", "student"}),
+          arguments("we will we will rock you", "we", "will", new String[] {"we", "rock"}));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void mostCommonWord(String input, String[] blacklist, String expectedResult) {
+  void findOcurrences(String input, String first, String second, String[] expectedResult) {
 
-    String actualResult = solution.mostCommonWord(input, blacklist);
+    String[] actualResult = solution.findOcurrences(input, first, second);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
