@@ -13,23 +13,28 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class ClosestBinarySearchTreeValue_270Test {
+class ConstructStringFromBinaryTree_606Test {
 
-  private final ClosestBinarySearchTreeValue_270 solution = new ClosestBinarySearchTreeValue_270();
+  private final ConstructStringFromBinaryTree_606 solution =
+      new ConstructStringFromBinaryTree_606();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(BinaryTree.of(4, 2, 5, 1, 3), 3.714, 4),
-          arguments(BinaryTree.of(4, 2, 5, 1, 3), 3.4, 3));
+          arguments(BinaryTree.of(1, 2, 3, null, 4), "1(2()(4))(3)"),
+          arguments(BinaryTree.of(1, 2, 3, 4), "1(2(4))(3)"),
+          arguments(
+              BinaryTree.of(1, null, 2, null, 3, null, 4, null, 5, null, 6),
+              "1()(2()(3()(4()(5()(6)))))"),
+          arguments(BinaryTree.empty(), ""));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void closestValue(TreeNode root, double target, int expectedResult) {
-    int actualResult = solution.closestValue(root, target);
+  void tree2str(TreeNode root, String expectedResult) {
+    String actualResult = solution.tree2str(root);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

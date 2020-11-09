@@ -13,23 +13,23 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class ClosestBinarySearchTreeValue_270Test {
-
-  private final ClosestBinarySearchTreeValue_270 solution = new ClosestBinarySearchTreeValue_270();
+class RangeSumOfBST_938Test {
+  private final RangeSumOfBST_938 solution = new RangeSumOfBST_938();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(BinaryTree.of(4, 2, 5, 1, 3), 3.714, 4),
-          arguments(BinaryTree.of(4, 2, 5, 1, 3), 3.4, 3));
+          arguments(BinaryTree.of(10, 5, 15, 3, 7, null, 18), 7, 15, 32),
+          arguments(BinaryTree.of(10, 5, 15, 3, 7, 13, 18, 1, null, 6), 6, 10, 23));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void closestValue(TreeNode root, double target, int expectedResult) {
-    int actualResult = solution.closestValue(root, target);
+  void rangeSumBST(TreeNode input, int min, int max, int expectedResult) {
+
+    int actualResult = solution.rangeSumBST(input, min, max);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
