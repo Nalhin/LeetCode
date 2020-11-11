@@ -1,6 +1,5 @@
 package com.leetcode.binarysearch.medium;
 
-import com.leetcode.binarysearch.medium.FindTheSmallestDivisorGivenAThreshold_1283;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

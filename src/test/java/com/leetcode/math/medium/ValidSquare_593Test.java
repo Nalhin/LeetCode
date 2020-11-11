@@ -1,4 +1,4 @@
-package com.leetcode.math.easy;
+package com.leetcode.math.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,26 +11,22 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class SqrtX_69Test {
+class ValidSquare_593Test {
 
-  private final SqrtX_69 solution = new SqrtX_69();
+  private final ValidSquare_593 solution = new ValidSquare_593();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(4, 2),
-          arguments(8, 2),
-          arguments(1, 1),
-          arguments(85, 9),
-          arguments(2147395599, 46339));
+          arguments(new int[] {0, 0}, new int[] {1, 1}, new int[] {1, 0}, new int[] {0, 1}, true));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void mySqrt(int x, int expectedResult) {
-    int actualResult = solution.mySqrt(x);
+  void validSquare(int[] p1, int[] p2, int[] p3, int[] p4, boolean expectedResult) {
+    boolean actualResult = solution.validSquare(p1, p2, p3, p4);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

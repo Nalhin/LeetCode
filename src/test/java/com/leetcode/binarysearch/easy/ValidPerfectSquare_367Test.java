@@ -1,4 +1,4 @@
-package com.leetcode.math.easy;
+package com.leetcode.binarysearch.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,26 +11,23 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class SqrtX_69Test {
+class ValidPerfectSquare_367Test {
 
-  private final SqrtX_69 solution = new SqrtX_69();
+  private final ValidPerfectSquare_367 solution = new ValidPerfectSquare_367();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(4, 2),
-          arguments(8, 2),
-          arguments(1, 1),
-          arguments(85, 9),
-          arguments(2147395599, 46339));
+          arguments(1, true), arguments(16, true), arguments(9, true), arguments(14, false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void mySqrt(int x, int expectedResult) {
-    int actualResult = solution.mySqrt(x);
+  void isPerfectSquare(int num, boolean expectedResult) {
+
+    boolean actualResult = solution.isPerfectSquare(num);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
