@@ -1,5 +1,6 @@
 package com.leetcode.arrays.medium;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -11,26 +12,30 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class KeysAndRooms_841Test {
+class LargestMountainInArray_845Test {
 
-  private final KeysAndRooms_841 solution = new KeysAndRooms_841();
+  private final LargestMountainInArray_845 solution = new LargestMountainInArray_845();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(List.of(List.of(1), List.of(2), List.of(3), Collections.emptyList()), true),
-          arguments(List.of(List.of(1, 3), List.of(3, 0, 1), List.of(2), List.of(0)), false));
+          arguments(new int[] {2, 1, 4, 7, 3, 2, 5}, 5),
+          arguments(new int[] {2, 2, 2}, 0),
+          arguments(new int[] {1, 2, 3}, 0),
+          arguments(new int[] {1, 2, 1}, 3),
+          arguments(new int[] {}, 0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void canVisitAllRooms(List<List<Integer>> input, boolean expectedResult) {
+  void longestMountain(int[] input, int expectedResult) {
 
-    boolean actualResult = solution.canVisitAllRooms(input);
+    int actualResult = solution.longestMountain(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
