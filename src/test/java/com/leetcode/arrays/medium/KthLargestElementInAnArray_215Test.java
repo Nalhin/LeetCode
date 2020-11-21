@@ -11,27 +11,24 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class LargestMountainInArray_845Test {
+class KthLargestElementInAnArray_215Test {
 
-  private final LargestMountainInArray_845 solution = new LargestMountainInArray_845();
+  private final KthLargestElementInAnArray_215 solution = new KthLargestElementInAnArray_215();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {2, 1, 4, 7, 3, 2, 5}, 5),
-          arguments(new int[] {2, 2, 2}, 0),
-          arguments(new int[] {1, 2, 3}, 0),
-          arguments(new int[] {1, 2, 1}, 3),
-          arguments(new int[] {}, 0));
+          arguments(new int[] {3, 2, 1, 5, 6, 4}, 2, 5),
+          arguments(new int[] {3, 2, 3, 1, 2, 4, 5, 5, 6}, 4, 4));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void longestMountain(int[] input, int expectedResult) {
+  void longestMountain(int[] nums, int k, int expectedResult) {
 
-    int actualResult = solution.longestMountain(input);
+    int actualResult = solution.findKthLargest(nums, k);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
