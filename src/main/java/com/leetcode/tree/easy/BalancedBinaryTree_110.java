@@ -44,7 +44,6 @@ package com.leetcode.tree.easy;
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import com.leetcode.utils.BinaryTree.TreeNode;
-import com.sun.source.tree.Tree;
 
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode

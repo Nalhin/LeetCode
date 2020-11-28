@@ -39,12 +39,9 @@ package com.leetcode.tree.hard;
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import com.leetcode.utils.BinaryTree.TreeNode;
-import com.sun.source.tree.Tree;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
-import java.util.List;
 
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode

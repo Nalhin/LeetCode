@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class LoggerRateLimiter_359 {
   public static class Logger {
-    private HashMap<String, Integer> map = new HashMap<>();
+    private final HashMap<String, Integer> map = new HashMap<>();
     private final int GRACE_PERIOD = 10;
     /** Initialize your data structure here. */
     public Logger() {}

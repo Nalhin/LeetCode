@@ -56,7 +56,7 @@ public class BinarySearchTreeIterator_173 {
   static class BSTIterator {
 
     private TreeNode curr;
-    private Deque<TreeNode> stack = new ArrayDeque<>();
+    private final Deque<TreeNode> stack = new ArrayDeque<>();
 
     public BSTIterator(TreeNode root) {
       curr = root;
@@ -83,7 +83,7 @@ public class BinarySearchTreeIterator_173 {
  O(1) amortized Runtime: 15 ms, faster than 85.24% of Java online submissions for Binary Search Tree Iterator.
  O(h) Memory Usage: 44.3 MB, less than 5.64% of Java online submissions for Binary Search Tree Iterator.
 */
-/**
+/*
  * Your BSTIterator object will be instantiated and called as such: BSTIterator obj = new
  * BSTIterator(root); int param_1 = obj.next(); boolean param_2 = obj.hasNext();
  */

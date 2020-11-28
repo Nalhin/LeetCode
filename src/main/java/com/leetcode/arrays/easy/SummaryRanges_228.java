@@ -73,7 +73,6 @@ package com.leetcode.arrays.easy;
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 /*
  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Summary Ranges.

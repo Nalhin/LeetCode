@@ -30,7 +30,7 @@ import java.util.HashMap;
 public class TwoSumIII_170 {
   static class TwoSum {
 
-    private HashMap<Integer, Integer> map = new HashMap<>();
+    private final HashMap<Integer, Integer> map = new HashMap<>();
 
     /** Initialize your data structure here. */
     public TwoSum() {}

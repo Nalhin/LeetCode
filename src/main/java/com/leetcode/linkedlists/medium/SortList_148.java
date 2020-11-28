@@ -41,7 +41,6 @@ package com.leetcode.linkedlists.medium;
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import com.leetcode.utils.LinkedList.ListNode;
-import org.w3c.dom.Node;
 
 /**
  * Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode() {}

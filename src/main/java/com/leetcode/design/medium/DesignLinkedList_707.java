@@ -158,7 +158,7 @@ public class DesignLinkedList_707 {
   private static class Node {
 
     private Node next;
-    private int val;
+    private final int val;
 
     public Node(int val) {
       this.val = val;

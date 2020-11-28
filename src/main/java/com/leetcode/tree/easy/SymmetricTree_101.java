@@ -35,10 +35,7 @@ package com.leetcode.tree.easy;
 
 import com.leetcode.utils.BinaryTree.TreeNode;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Stack;
-import java.util.TreeMap;
 
 /**
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode

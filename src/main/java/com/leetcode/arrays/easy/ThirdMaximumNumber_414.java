@@ -38,7 +38,6 @@ package com.leetcode.arrays.easy;
 // Related Topics Array
 // 👍 741 👎 1357
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;

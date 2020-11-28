@@ -57,8 +57,6 @@ package com.leetcode.arrays.easy;
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
-import java.util.Arrays;
-
 public class MissingNumber_268 {
   public int missingNumber(int[] nums) {
     int expectedSum = 0;

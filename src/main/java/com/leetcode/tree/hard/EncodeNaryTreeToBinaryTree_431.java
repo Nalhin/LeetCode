@@ -71,7 +71,7 @@ import java.util.List;
   O(n) Memory Usage: 41 MB, less than 86.26% of Java online submissions for Encode N-ary Tree to Binary Tree.
 */
 public class EncodeNaryTreeToBinaryTree_431 {
-  class Codec {
+  static class Codec {
     // Encodes an n-ary tree to a binary tree.
     public TreeNode encode(Node root) {
       if (root == null) {

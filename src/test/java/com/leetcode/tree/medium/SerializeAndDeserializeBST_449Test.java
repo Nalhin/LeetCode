@@ -11,7 +11,6 @@ import org.junit.jupiter.params.provider.ArgumentsSource;
 import java.util.stream.Stream;
 
 import static com.leetcode.assertions.BinaryTreeAssertions.assertThatBinaryTree;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class SerializeAndDeserializeBST_449Test {
