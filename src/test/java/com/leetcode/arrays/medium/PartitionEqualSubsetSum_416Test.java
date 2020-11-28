@@ -1,4 +1,4 @@
-package com.leetcode.strings.medium;
+package com.leetcode.arrays.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,22 +11,25 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class LongestSubstringWithAtLeastKRepeatingCharacters_395Test {
+class PartitionEqualSubsetSum_416Test {
 
-  private final LongestSubstringWithAtLeastKRepeatingCharacters_395 solution =
-      new LongestSubstringWithAtLeastKRepeatingCharacters_395();
+  private final PartitionEqualSubsetSum_416 solution = new PartitionEqualSubsetSum_416();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments("aaabb", 3, 3), arguments("ababbc", 2, 5));
+      return Stream.of(
+          arguments(new int[] {1, 5, 11, 5}, true),
+          arguments(new int[] {1, 2, 5}, false),
+          arguments(new int[] {1, 2, 3, 5}, false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void longestSubstring(String input, int k, int expectedResult) {
-    int actualResult = solution.longestSubstring(input, k);
+  void canPartition(int[] input, boolean expectedResult) {
+
+    boolean actualResult = solution.canPartition(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
