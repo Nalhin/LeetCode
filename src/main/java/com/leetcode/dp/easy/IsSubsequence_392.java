@@ -36,7 +36,10 @@ package com.leetcode.dp.easy;
 // 👍 1988 👎 223
 
 // leetcode submit region begin(Prohibit modification and deletion)
-
+/*
+ O(n) Runtime: 1 ms, faster than 77.67% of Java online submissions for Is Subsequence.
+ O(1) Memory Usage: 37.2 MB, less than 37.35% of Java online submissions for Is Subsequence.
+*/
 public class IsSubsequence_392 {
   public boolean isSubsequence(String s, String t) {
     int subLen = 0;
