@@ -39,10 +39,10 @@
 --
 -- #leetcode submit region begin(Prohibit modification and deletion)
 -- # Write your MySQL query statement below
-/*
-   Runtime: 331 ms, faster than 37.71% of MySQL online submissions for Combine Two Tables.
-   Memory Usage: 0B, less than 100.00% of MySQL online submissions for Combine Two Tables.
-*/
+
+-- Runtime: 331 ms, faster than 37.71% of MySQL online submissions for Combine Two Tables.
+-- Memory Usage: 0B, less than 100.00% of MySQL online submissions for Combine Two Tables.
+
 
 SELECT FirstName, LastName, City, State
 FROM Person
