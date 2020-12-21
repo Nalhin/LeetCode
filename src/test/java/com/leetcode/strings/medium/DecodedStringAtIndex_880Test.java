@@ -11,30 +11,25 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class DecodeString_394Test {
+class DecodedStringAtIndex_880Test {
 
-  private final DecodeString_394 solution = new DecodeString_394();
+  private final DecodedStringAtIndex_880 solution = new DecodedStringAtIndex_880();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments("3[a]2[bc]", "aaabcbc"),
-          arguments("3[a2[c]]", "accaccacc"),
-          arguments("2[abc]3[cd]ef", "abcabccdcdcdef"),
-          arguments("abc3[cd]xyz", "abccdcdcdxyz"),
-          arguments(
-              "10[leetcode]",
-              "leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode"));
+          arguments("leet2code3", 10, "o"),
+          arguments("ha22", 5, "h"),
+          arguments("a2345678999999999999999", 1, "a"));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void decodeString(String input, String expectedResult) {
-
-    String actualResult = solution.decodeString(input);
+  void decodeAtIndex(String str, int k, String expectedResult) {
+    String actualResult = solution.decodeAtIndex(str, k);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
