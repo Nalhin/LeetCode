@@ -1,4 +1,4 @@
-package com.leetcode.math.medium;
+package com.leetcode.hashtable.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,21 +11,22 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class TheKthFactorOfN_1492Test {
+class PalindromePermutation_266Test {
 
-  private final TheKthFactorOfN_1492 solution = new TheKthFactorOfN_1492();
+  private final PalindromePermutation_266 solution = new PalindromePermutation_266();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(12, 3, 3), arguments(7, 2, 7), arguments(4, 4, -1));
+      return Stream.of(
+          arguments("code", false), arguments("aab", true), arguments("carerac", true));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void kthFactor(int n, int k, int expectedResult) {
-    int actualResult = solution.kthFactor(n, k);
+  void canPermutePalindrome(String str, boolean expectedResult) {
+    boolean actualResult = solution.canPermutePalindrome(str);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
