@@ -1,4 +1,4 @@
-package com.leetcode.arrays.easy;
+package com.leetcode.backtracking.medium;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -12,25 +12,21 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MinimumValueToGetPositiveStepByStepSum_1413Test {
+class BeautifulArrangement_526Test {
 
-  private final MinimumValueToGetPositiveStepByStepSum_1413 solution =
-      new MinimumValueToGetPositiveStepByStepSum_1413();
+  private final BeautifulArrangement_526 solution = new BeautifulArrangement_526();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(
-          arguments(new int[] {-3, 2, -3, 4, 2}, 5),
-          arguments(new int[] {1, 2}, 1),
-          arguments(new int[] {1, -2, -3}, 5));
+      return Stream.of(arguments(2, 2), arguments(1, 1), arguments(5, 10));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void minStartValue(int[] input, int expectedResult) {
-    int actualResult = solution.minStartValue(input);
+  void countArrangement(int input, int expectedResult) {
+    int actualResult = solution.countArrangement(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

@@ -1,6 +1,7 @@
-package com.leetcode.arrays.easy;
+package com.leetcode.linkedlists.medium;
 
-import org.junit.jupiter.api.Test;
+import com.leetcode.utils.LinkedList;
+import com.leetcode.utils.LinkedList.ListNode;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -9,29 +10,26 @@ import org.junit.jupiter.params.provider.ArgumentsSource;
 
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.leetcode.assertions.LinkedListAssertions.assertThatLinkedList;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MinimumValueToGetPositiveStepByStepSum_1413Test {
+class PartitionList_86Test {
 
-  private final MinimumValueToGetPositiveStepByStepSum_1413 solution =
-      new MinimumValueToGetPositiveStepByStepSum_1413();
+  private final PartitionList_86 solution = new PartitionList_86();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {-3, 2, -3, 4, 2}, 5),
-          arguments(new int[] {1, 2}, 1),
-          arguments(new int[] {1, -2, -3}, 5));
+          arguments(LinkedList.of(1, 4, 3, 2, 5, 2), 3, LinkedList.of(1, 2, 2, 4, 3, 5)));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void minStartValue(int[] input, int expectedResult) {
-    int actualResult = solution.minStartValue(input);
+  void partition(ListNode input, int x, ListNode expectedResult) {
+    ListNode actualResult = solution.partition(input, x);
 
-    assertThat(actualResult).isEqualTo(expectedResult);
+    assertThatLinkedList(actualResult).isEqualTo(expectedResult);
   }
 }
