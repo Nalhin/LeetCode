@@ -46,7 +46,7 @@ package com.leetcode.bfs.medium;
 import java.util.*;
 
 public class MinKnightMoves_1197 {
-  int[][] KNIGHT_MOVES =
+  private final int[][] KNIGHT_MOVES =
       new int[][] {{2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}, {1, -2}, {2, -1}};
 
   public int minKnightMoves(int x, int y) {
