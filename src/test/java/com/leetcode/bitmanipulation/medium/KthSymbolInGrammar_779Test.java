@@ -1,4 +1,4 @@
-package com.leetcode.medium;
+package com.leetcode.bitmanipulation.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,29 +11,27 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class CompareVersionNumbers_165Test {
+class KthSymbolInGrammar_779Test {
 
-  private final CompareVersionNumbers_165 solution = new CompareVersionNumbers_165();
+  private final KthSymbolInGrammar_779 solution = new KthSymbolInGrammar_779();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-
       return Stream.of(
-          arguments("0.1", "1.1", -1),
-          arguments("1.0.1", "1", 1),
-          arguments("7.5.2.4", "7.5.3", -1),
-          arguments("1.01", "1.001", 0),
-          arguments("1.0", "1.0.0", 0));
+          arguments(1, 1, 0),
+          arguments(2, 1, 0),
+          arguments(2, 2, 1),
+          arguments(4, 5, 1),
+          arguments(3, 1, 0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void longestCommonPrefix(String input1, String input2, int expected) {
+  void kthGrammar(int n, int k, int expectedResult) {
+    int actualResult = solution.kthGrammar(n, k);
 
-    int result = solution.compareVersion(input1, input2);
-
-    assertThat(result).isEqualTo(expected);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }
