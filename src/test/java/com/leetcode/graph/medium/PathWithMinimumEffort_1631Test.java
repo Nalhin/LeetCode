@@ -1,4 +1,4 @@
-package com.leetcode.dp.medium;
+package com.leetcode.graph.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,25 +11,28 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class CoinChange2_518Test {
+class PathWithMinimumEffort_1631Test {
 
-  private final CoinChange2_518 solution = new CoinChange2_518();
+  private final PathWithMinimumEffort_1631 solution = new PathWithMinimumEffort_1631();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(5, new int[] {1, 2, 5}, 4),
-          arguments(3, new int[] {2}, 0),
-          arguments(10, new int[] {2}, 1));
+          arguments(new int[][] {{1, 2, 2}, {3, 8, 2}, {5, 3, 5}}, 2),
+          arguments(new int[][] {{1, 2, 3}, {3, 8, 4}, {5, 3, 5}}, 1),
+          arguments(
+              new int[][] {
+                {1, 2, 1, 1, 1}, {1, 2, 1, 2, 1}, {1, 2, 1, 2, 1}, {1, 2, 1, 2, 1}, {1, 1, 1, 2, 1}
+              },
+              0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void change(int amount, int[] coins, int expectedResult) {
-
-    int actualResult = solution.change(amount, coins);
+  void minimumEffortPath(int[][] heights, int expectedResult) {
+    int actualResult = solution.minimumEffortPath(heights);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
