@@ -17,7 +17,7 @@ class Base7_504Test {
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(100, "202"), arguments(-7, "10"), arguments(0, "0"));
+      return Stream.of(arguments(100, "202"), arguments(-7, "-10"), arguments(0, "0"));
     }
   }
 
