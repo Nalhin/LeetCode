@@ -47,7 +47,7 @@ package com.leetcode.backtracking.medium;
 // leetcode submit region begin(Prohibit modification and deletion)
 /*
  O(2^n) Runtime: 4 ms, faster than 71.17% of Java online submissions for Combination Sum II.
- O(n) Memory Usage: 39.3 MB, less than 64.58% of Java online submissions for Combination Sum II.
+ O(2^n) Memory Usage: 39.3 MB, less than 64.58% of Java online submissions for Combination Sum II.
 */
 import java.util.ArrayList;
 import java.util.Arrays;
