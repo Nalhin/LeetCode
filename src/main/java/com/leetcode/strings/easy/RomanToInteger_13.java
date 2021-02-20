@@ -68,11 +68,14 @@ package com.leetcode.strings.easy;
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
+/*
+ O(n)  Runtime: 5 ms, faster than 61.58% of Java online submissions for Roman to Integer.
+ O(1)  Memory Usage: 39.5 MB, less than 40.53% of Java online submissions for Roman to Integer.
+*/
 import java.util.Map;
 
 public class RomanToInteger_13 {
-
-  private static final Map<Character, Integer> ROMAN_NUMBER_VALUES =
+  private final Map<Character, Integer> ROMAN_TO_INTEGER =
       Map.of(
           'I', 1,
           'V', 5,
@@ -84,26 +87,20 @@ public class RomanToInteger_13 {
 
   public int romanToInt(String s) {
     int result = 0;
-    int len = s.length() - 1;
+    int prev = 0;
 
-    for (int i = 0; i < len; i++) {
-      int currVal = ROMAN_NUMBER_VALUES.get(s.charAt(i));
-      char next = s.charAt(i + 1);
-      if (ROMAN_NUMBER_VALUES.get(next) > currVal) {
-        result -= currVal;
-      } else {
-        result += currVal;
+    for (int i = 0; i < s.length(); i++) {
+      int curr = ROMAN_TO_INTEGER.get(s.charAt(i));
+
+      if (curr > prev) {
+        result -= prev * 2;
       }
+      result += curr;
+      prev = curr;
     }
 
-    result += ROMAN_NUMBER_VALUES.get(s.charAt(len));
     return result;
   }
 }
-
-/*
-   	Memory Usage:40.1 MB, less than 58.61% of Java online submissions
-   	Runtime:4 ms, faster than 86.54% of Java online submissions.
-*/
 
 // leetcode submit region end(Prohibit modification and deletion)
