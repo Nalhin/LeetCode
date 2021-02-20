@@ -11,20 +11,20 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class SmallestIntegerDivisibleByK_1015Test {
-  private final SmallestIntegerDivisibleByK_1015 solution = new SmallestIntegerDivisibleByK_1015();
+class RobotBoundedInCircle_1041Test {
+  private final RobotBoundedInCircle_1041 solution = new RobotBoundedInCircle_1041();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(1, 1), arguments(2, -1), arguments(3, 3));
+      return Stream.of(arguments("GGLLGG", true), arguments("GG", false), arguments("GL", true));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void smallestRepunitDivByK(int k, int expectedResult) {
-    int actualResult = solution.smallestRepunitDivByK(k);
+  void isRobotBounded(String instructions, boolean expectedResult) {
+    boolean actualResult = solution.isRobotBounded(instructions);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
