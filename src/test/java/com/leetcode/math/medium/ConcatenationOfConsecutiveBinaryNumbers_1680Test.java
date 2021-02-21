@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ConcatenationOfConsecutiveBinaryNumbers_1680Test {
-
   private final ConcatenationOfConsecutiveBinaryNumbers_1680 solution =
       new ConcatenationOfConsecutiveBinaryNumbers_1680();
 

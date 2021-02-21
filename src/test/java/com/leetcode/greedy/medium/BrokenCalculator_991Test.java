@@ -11,23 +11,21 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class BoatsToSavePeople_881Test {
-  private final BoatsToSavePeople_881 solution = new BoatsToSavePeople_881();
+class BrokenCalculator_991Test {
+  private final BrokenCalculator_991 solution = new BrokenCalculator_991();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 2}, 3, 1),
-          arguments(new int[] {3, 2, 2, 1}, 3, 3),
-          arguments(new int[] {3, 5, 3, 4}, 5, 4));
+          arguments(2, 3, 2), arguments(5, 8, 2), arguments(3, 10, 3), arguments(1024, 1, 1023));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void numRescueBoats(int[] people, int limit, int expectedResult) {
-    int actualResult = solution.numRescueBoats(people, limit);
+  void brokenCalc(int x, int target, int expectedResult) {
+    int actualResult = solution.brokenCalc(x, target);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

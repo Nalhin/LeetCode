@@ -1,4 +1,4 @@
-package com.leetcode.greedy.medium;
+package com.leetcode.math.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,23 +11,25 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class BoatsToSavePeople_881Test {
-  private final BoatsToSavePeople_881 solution = new BoatsToSavePeople_881();
+class FractionToRecurringDecimal_166Test {
+  private final FractionToRecurringDecimal_166 solution = new FractionToRecurringDecimal_166();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 2}, 3, 1),
-          arguments(new int[] {3, 2, 2, 1}, 3, 3),
-          arguments(new int[] {3, 5, 3, 4}, 5, 4));
+          arguments(1, 2, "0.5"),
+          arguments(2, 1, "2"),
+          arguments(2, 3, "0.(6)"),
+          arguments(4, 333, "0.(012)"),
+          arguments(1, 5, "0.2"));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void numRescueBoats(int[] people, int limit, int expectedResult) {
-    int actualResult = solution.numRescueBoats(people, limit);
+  void fractionToDecimal(int numerator, int denominator, String expectedResult) {
+    String actualResult = solution.fractionToDecimal(numerator, denominator);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
