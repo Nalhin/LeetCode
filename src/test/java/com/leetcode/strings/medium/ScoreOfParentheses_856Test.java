@@ -6,30 +6,26 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class LongestWordInDictionaryThroughDeleting_524Test {
-
-  private final LongestWordInDictionaryThroughDeleting_524 solution =
-      new LongestWordInDictionaryThroughDeleting_524();
+class ScoreOfParentheses_856Test {
+  private final ScoreOfParentheses_856 solution = new ScoreOfParentheses_856();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments("abpcplea", List.of("ale", "apple", "monkey", "plea"), "apple"),
-          arguments("abpcpleoa", List.of("a", "b", "c"), "a"));
+          arguments("()", 1), arguments("(())", 2), arguments("()()", 2), arguments("(()(()))", 6));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findLongestWord(String input, List<String> words, String expectedResult) {
-    String actualResult = solution.findLongestWord(input, words);
+  void scoreOfParentheses(String input, int expectedResult) {
+    int actualResult = solution.scoreOfParentheses(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

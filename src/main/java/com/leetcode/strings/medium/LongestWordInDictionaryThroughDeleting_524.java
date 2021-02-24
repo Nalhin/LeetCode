@@ -59,7 +59,7 @@ public class LongestWordInDictionaryThroughDeleting_524 {
 
   private boolean isSubsequence(String sequence, String candidate) {
     int candidateIndex = 0;
-    for (int i = 0; i < sequence.length(); i++) {
+    for (int i = 0; i < sequence.length() && candidateIndex < candidate.length(); i++) {
       if (sequence.charAt(i) == candidate.charAt(candidateIndex)) {
         candidateIndex++;
       }
