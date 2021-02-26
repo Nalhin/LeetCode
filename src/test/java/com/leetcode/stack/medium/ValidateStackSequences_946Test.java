@@ -1,4 +1,4 @@
-package com.leetcode.hashtable.easy;
+package com.leetcode.stack.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,25 +11,22 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class VerifyingAnAlienDictionary_953Test {
-
-  private final VerifyingAnAlienDictionary_953 solution = new VerifyingAnAlienDictionary_953();
+class ValidateStackSequences_946Test {
+  private final ValidateStackSequences_946 solution = new ValidateStackSequences_946();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new String[] {"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz", true),
-          arguments(new String[] {"word", "world", "row"}, "worldabcefghijkmnpqstuvxyz", false),
-          arguments(new String[] {"apple", "app"}, "abcdefghijklmnopqrstuvwxyz", false),
-          arguments(new String[] {"kuvp", "q"}, "ngxlkthsjuoqcpavbfdermiywz", true));
+          arguments(new int[] {1, 2, 3, 4, 5}, new int[] {4, 5, 3, 2, 1}, true),
+          arguments(new int[] {1, 2, 3, 4, 5}, new int[] {4, 3, 5, 1, 2}, false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void isAlienSorted(String[] words, String order, boolean expectedResult) {
-    boolean actualResult = solution.isAlienSorted(words, order);
+  void validateStackSequences(int[] pushed, int[] popped, boolean expectedResult) {
+    boolean actualResult = solution.validateStackSequences(pushed, popped);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

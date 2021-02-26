@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class KthSymbolInGrammar_779Test {
-
   private final KthSymbolInGrammar_779 solution = new KthSymbolInGrammar_779();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
