@@ -13,8 +13,11 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ShortestUnsortedContinuousSubarray_581Test {
 
-  private final ShortestUnsortedContinuousSubarray_581 solution =
-      new ShortestUnsortedContinuousSubarray_581();
+  private final ShortestUnsortedContinuousSubarray_581.Sort solutionSort =
+      new ShortestUnsortedContinuousSubarray_581.Sort();
+
+  private final ShortestUnsortedContinuousSubarray_581.Stack solutionStack =
+          new ShortestUnsortedContinuousSubarray_581.Stack();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -28,8 +31,17 @@ class ShortestUnsortedContinuousSubarray_581Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findUnsortedSubarray(int[] input, int expectedResult) {
-    int actualResult = solution.findUnsortedSubarray(input);
+  void findUnsortedSubarraySort(int[] input, int expectedResult) {
+    int actualResult = solutionSort.findUnsortedSubarray(input);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void findUnsortedSubarrayStack(int[] input, int expectedResult) {
+    int actualResult = solutionStack.findUnsortedSubarray(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

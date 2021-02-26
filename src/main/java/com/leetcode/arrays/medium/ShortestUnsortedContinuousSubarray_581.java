@@ -43,31 +43,67 @@ package com.leetcode.arrays.medium;
 // 👍 3603 👎 169
 
 // leetcode submit region begin(Prohibit modification and deletion)
-/*
- O(nlog(n)) Runtime: 6 ms, faster than 48.34% of Java online submissions for Shortest Unsorted Continuous Subarray.
- O(n) Memory Usage: 40.5 MB, less than 47.57% of Java online submissions for Shortest Unsorted Continuous Subarray.
-*/
+
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 public class ShortestUnsortedContinuousSubarray_581 {
 
-  public int findUnsortedSubarray(int[] nums) {
-    int[] sorted = new int[nums.length];
-    System.arraycopy(nums, 0, sorted, 0, nums.length);
-    Arrays.sort(sorted);
+  /*
+   O(nlog(n)) Runtime: 6 ms, faster than 48.34% of Java online submissions for Shortest Unsorted Continuous Subarray.
+   O(n) Memory Usage: 40.5 MB, less than 47.57% of Java online submissions for Shortest Unsorted Continuous Subarray.
+  */
+  static class Sort {
+    public int findUnsortedSubarray(int[] nums) {
+      int[] sorted = new int[nums.length];
+      System.arraycopy(nums, 0, sorted, 0, nums.length);
+      Arrays.sort(sorted);
 
-    int first = nums.length;
-    int last = 0;
-    for (int i = 0; i < nums.length; i++) {
-      if (sorted[i] != nums[i]) {
-        first = Math.min(first, i);
-        last = Math.max(last, i);
+      int first = nums.length;
+      int last = 0;
+      for (int i = 0; i < nums.length; i++) {
+        if (sorted[i] != nums[i]) {
+          first = Math.min(first, i);
+          last = Math.max(last, i);
+        }
       }
+
+      int diff = last - first + 1;
+
+      return Math.max(diff, 0);
     }
+  }
+  /*
+    O(n) Runtime: 7 ms, faster than 32.02% of Java online submissions for Shortest Unsorted Continuous Subarray.
+    O(n) Memory Usage: 40.2 MB, less than 76.32% of Java online submissions for Shortest Unsorted Continuous Subarray.
+  */
+  static class Stack {
+    public int findUnsortedSubarray(int[] nums) {
+      int left = nums.length - 1;
+      int right = 0;
 
-    int diff = last - first + 1;
+      Deque<Integer> stack = new ArrayDeque<>();
 
-    return Math.max(diff, 0);
+      for (int i = 0; i < nums.length; i++) {
+        while (!stack.isEmpty() && nums[stack.peek()] > nums[i]) {
+          left = Math.min(left, stack.pop());
+        }
+
+        stack.push(i);
+      }
+
+      stack.clear();
+      for (int i = nums.length - 1; i >= 0; i--) {
+        while (!stack.isEmpty() && nums[stack.peek()] < nums[i]) {
+          right = Math.max(right, stack.pop());
+        }
+
+        stack.push(i);
+      }
+
+      return right - left > 0 ? right - left + 1 : 0;
+    }
   }
 }
 // leetcode submit region end(Prohibit modification and deletion)
