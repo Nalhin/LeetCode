@@ -1,4 +1,4 @@
-package com.leetcode.bfs.medium;
+package com.leetcode.math.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,20 +11,26 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MinKnightMoves_1197Test {
-  private final MinKnightMoves_1197 solution = new MinKnightMoves_1197();
+class DivideTwoIntegers_29Test {
+  private final DivideTwoIntegers_29 solution = new DivideTwoIntegers_29();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(2, 1, 1), arguments(5, 5, 4), arguments(0, 0, 0));
+      return Stream.of(
+          arguments(10, 3, 3),
+          arguments(7, -3, -2),
+          arguments(0, 1, 0),
+          arguments(1, 1, 1),
+          arguments(-2147483648, 1, -2147483648),
+          arguments(-2147483648, -1, 2147483647));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void minKnightMoves(int x, int y, int expectedResult) {
-    int actualResult = solution.minKnightMoves(x, y);
+  void divide(int dividend, int divisor, int expectedResult) {
+    int actualResult = solution.divide(dividend, divisor);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
