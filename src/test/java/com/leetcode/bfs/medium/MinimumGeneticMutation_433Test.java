@@ -18,9 +18,9 @@ class MinimumGeneticMutation_433Test {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments("AACCGGTT", "AACCGGTA", new String[] {"AACCGGTA"}),
-          arguments("AACCGGTT", "AAACGGTA", new String[] {"AACCGGTA", "AACCGCTA", "AAACGGTA"}),
-          arguments("AAAAACCC", "AACCCCCC", new String[] {"AAAACCCC", "AAACCCCC", "AACCCCCC"}));
+          arguments("AACCGGTT", "AACCGGTA", new String[] {"AACCGGTA"}, 1),
+          arguments("AACCGGTT", "AAACGGTA", new String[] {"AACCGGTA", "AACCGCTA", "AAACGGTA"}, 2),
+          arguments("AAAAACCC", "AACCCCCC", new String[] {"AAAACCCC", "AAACCCCC", "AACCCCCC"}, 3));
     }
   }
 
