@@ -1,0 +1,48 @@
+-- #Table point holds the x coordinate of some points on x-axis in a plane, which a
+-- #re all integers.
+-- #
+-- #Write a query to find the shortest distance between two points in these points.
+-- #
+-- #
+-- #
+-- #
+-- #
+-- #| x   |
+-- #|-----|
+-- #| -1  |
+-- #| 0   |
+-- #| 2   |
+-- #
+-- #
+-- #
+-- #The shortest distance is '1' obviously, which is from point '-1' to '0'. So the
+-- # output is as below:
+-- #
+-- #
+-- #
+-- #
+-- #| shortest|
+-- #|---------|
+-- #| 1       |
+-- #
+-- #
+-- #
+-- #Note: Every point is unique, which means there is no duplicates in table point.
+--                                                                     #
+-- #
+-- #
+-- #Follow-up: What if all these points have an id and are arranged from the left m
+-- #ost to the right most of x axis?
+-- #
+-- #
+-- # 👍 189 👎 26
+--
+--
+-- #leetcode submit region begin(Prohibit modification and deletion)
+-- # Write your MySQL query statement below
+--  Runtime: 199 ms, faster than 91.23% of MySQL online submissions for Shortest Distance in a Line.
+--  Memory Usage: 0B, less than 100.00% of MySQL online submissions for Shortest Distance in a Line.
+SELECT MIN(p1.x - p2.x) as shortest
+FROM point as p1
+         INNER JOIN point p2 on p1.x > p2.x
+-- #leetcode submit region end(Prohibit modification and deletion)

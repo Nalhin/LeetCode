@@ -67,6 +67,7 @@
 --
 -- #leetcode submit region begin(Prohibit modification and deletion)
 -- # Write your MySQL query statement below
+
 -- Runtime: 1704 ms, faster than 5.09% of MySQL online submissions for Product Sales Analysis I.
 -- Memory Usage: 0B, less than 100.00% of MySQL online submissions for Product Sales Analysis I.
 
