@@ -6,30 +6,33 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class Hexspeak_1271Test {
-  private final Hexspeak_1271 solution = new Hexspeak_1271();
+class StringMatchingInAnArray_1408Test {
+
+  private final StringMatchingInAnArray_1408 solution = new StringMatchingInAnArray_1408();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments("257", "IOI"),
-          arguments("3", "ERROR"),
-          arguments("747823223228", "AEIDBCDIBC"));
+          arguments(new String[] {"mass", "as", "hero", "superhero"}, List.of("as", "hero")),
+          arguments(new String[] {"leetcode", "et", "code"}, List.of("et", "code")),
+          arguments(new String[] {"blue", "green", "bu"}, Collections.emptyList()));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void toHexspeak(String num, String expectedResult) {
-    String actualResult = solution.toHexspeak(num);
+  void stringMatching(String[] words, List<String> expectedResult) {
+    List<String> actualResult = solution.stringMatching(words);
 
-    assertThat(actualResult).isEqualTo(expectedResult);
+    assertThat(actualResult).containsExactlyInAnyOrderElementsOf(expectedResult);
   }
 }

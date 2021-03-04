@@ -11,24 +11,26 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class Hexspeak_1271Test {
-  private final Hexspeak_1271 solution = new Hexspeak_1271();
+class ValidWordAbbreviation_408Test {
+  private final ValidWordAbbreviation_408 solution = new ValidWordAbbreviation_408();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
 
       return Stream.of(
-          arguments("257", "IOI"),
-          arguments("3", "ERROR"),
-          arguments("747823223228", "AEIDBCDIBC"));
+          arguments("internationalization", "i12iz4n", true),
+          arguments("apple", "a2e", false),
+          arguments("a", "2", false),
+          arguments("internationalization", "i5a11o1", true),
+          arguments("a", "01", false));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void toHexspeak(String num, String expectedResult) {
-    String actualResult = solution.toHexspeak(num);
+  void validWordAbbreviation(String word, String abbr, boolean expectedResult) {
+    boolean actualResult = solution.validWordAbbreviation(word, abbr);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

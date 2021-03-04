@@ -60,7 +60,7 @@ public class Hexspeak_1271 {
       numAsInt /= 16;
     }
 
-    return sb.toString();
+    return sb.reverse().toString();
   }
 }
 // leetcode submit region end(Prohibit modification and deletion)
