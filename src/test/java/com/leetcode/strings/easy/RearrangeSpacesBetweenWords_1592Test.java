@@ -1,4 +1,4 @@
-package com.leetcode.bfs.medium;
+package com.leetcode.strings.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,23 +11,26 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MaxAreaOfIsland_695Test {
-  private final MaxAreaOfIsland_695 solution = new MaxAreaOfIsland_695();
+class RearrangeSpacesBetweenWords_1592Test {
+  private final RearrangeSpacesBetweenWords_1592 solution = new RearrangeSpacesBetweenWords_1592();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+
       return Stream.of(
-          arguments(new int[][] {{0, 0, 0, 0, 0, 0}}, 0),
-          arguments(
-              new int[][] {{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 1, 1}, {0, 0, 0, 1, 1}}, 4));
+          arguments("  this   is  a sentence ", "this   is   a   sentence"),
+          arguments(" practice   makes   perfect", "practice   makes   perfect "),
+          arguments("hello   world", "hello   world"),
+          arguments("a", "a"),
+          arguments("  walks  udp package   into  bar a", "walks  udp  package  into  bar  a "));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void maxAreaOfIsland(int[][] grid, int expectedResult) {
-    int actualResult = solution.maxAreaOfIsland(grid);
+  void reorderSpaces(String str, String expectedResult) {
+    String actualResult = solution.reorderSpaces(str);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
