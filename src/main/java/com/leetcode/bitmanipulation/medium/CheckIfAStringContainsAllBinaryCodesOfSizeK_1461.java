@@ -71,7 +71,7 @@ public class CheckIfAStringContainsAllBinaryCodesOfSizeK_1461 {
     int goal = 1 << k;
     Set<String> visited = new HashSet<>();
 
-    for (int i = k; i < s.length() && visited.size() < goal; i++) {
+    for (int i = k; i <= s.length() && visited.size() < goal; i++) {
       visited.add(s.substring(i - k, i));
     }
     return visited.size() == goal;
