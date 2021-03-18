@@ -57,26 +57,26 @@ public class GenerateRandomPointInACircle_478 {
     private final Random random = new Random();
 
     private final double radius;
-    private final double x_center;
-    private final double y_center;
+    private final double xCenter;
+    private final double yCenter;
 
-    public Solution(double radius, double x_center, double y_center) {
+    public Solution(double radius, double xCenter, double y_center) {
       this.radius = radius;
-      this.x_center = x_center;
-      this.y_center = y_center;
+      this.xCenter = xCenter;
+      this.yCenter = y_center;
     }
 
     public double[] randPoint() {
       double len = Math.sqrt(random.nextDouble()) * radius;
       double deg = random.nextDouble() * 2 * Math.PI;
-      double x = x_center + len * Math.cos(deg);
-      double y = y_center + len * Math.sin(deg);
+      double x = xCenter + len * Math.cos(deg);
+      double y = yCenter + len * Math.sin(deg);
       return new double[] {x, y};
     }
   }
 }
 
-/**
+/*
  * Your Solution object will be instantiated and called as such: Solution obj = new Solution(radius,
  * x_center, y_center); double[] param_1 = obj.randPoint();
  */
