@@ -47,7 +47,7 @@ package com.leetcode.graph.easy;
 // Related Topics Graph
 // 👍 1480 👎 121
 /*
-  O(n) Runtime: 2 ms, faster than 99.69% of Java online submissions for Find the Town Judge.
+  O(n + m) Runtime: 2 ms, faster than 99.69% of Java online submissions for Find the Town Judge.
   O(n) Memory Usage: 47.2 MB, less than 24.19% of Java online submissions for Find the Town Judge.
 */
 // leetcode submit region begin(Prohibit modification and deletion)
