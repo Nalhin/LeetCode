@@ -1,4 +1,4 @@
-package com.leetcode.hashtable.easy;
+package com.leetcode.graph.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,24 +11,25 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class LongestHarmoniousSubsequence_594Test {
-
-  private final LongestHarmoniousSubsequence_594 solution = new LongestHarmoniousSubsequence_594();
+class FindTheTownJudge_997Test {
+  private final FindTheTownJudge_997 solution = new FindTheTownJudge_997();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 3, 2, 2, 5, 2, 3, 7}, 5),
-          arguments(new int[] {1, 2, 3, 4}, 2),
-          arguments(new int[] {1, 1, 1, 1}, 0));
+          arguments(2, new int[][] {{1, 2}}, 2),
+          arguments(3, new int[][] {{1, 3}, {2, 3}}, 3),
+          arguments(3, new int[][] {{1, 2}, {2, 3}}, -1),
+          arguments(3, new int[][] {{1, 2}, {2, 3}}, -1),
+          arguments(4, new int[][] {{1, 3}, {1, 4}, {2, 3}, {2, 4}, {4, 3}}, 3));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findLHS(int[] nums, int expectedResult) {
-    int actualResult = solution.findLHS(nums);
+  void findJudge(int n, int[][] relations, int expectedResult) {
+    int actualResult = solution.findJudge(n, relations);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
