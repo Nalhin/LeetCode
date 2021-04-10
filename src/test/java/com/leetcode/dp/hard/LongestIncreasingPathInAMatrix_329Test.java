@@ -11,33 +11,25 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class CherryPickupII_1463Test {
+class LongestIncreasingPathInAMatrix_329Test {
 
-  private final CherryPickupII_1463 solution = new CherryPickupII_1463();
+  private final LongestIncreasingPathInAMatrix_329 solution =
+      new LongestIncreasingPathInAMatrix_329();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[][] {{3, 1, 1}, {2, 5, 1}, {1, 5, 5}, {2, 1, 1}}, 24),
-          arguments(
-              new int[][] {
-                {1, 0, 0, 0, 0, 0, 1},
-                {2, 0, 0, 0, 0, 3, 0},
-                {2, 0, 9, 0, 0, 0, 0},
-                {0, 3, 0, 5, 4, 0, 0},
-                {1, 0, 2, 3, 0, 0, 6}
-              },
-              28),
-          arguments(new int[][] {{1, 1}, {1, 1}}, 4),
-          arguments(new int[][] {{1, 0, 0, 3}, {0, 0, 0, 3}, {0, 0, 3, 3}, {9, 0, 3, 3}}, 22));
+          arguments(new int[][] {{9, 9, 4}, {6, 6, 8}, {2, 1, 1}}, 4),
+          arguments(new int[][] {{3, 4, 5}, {3, 2, 6}, {2, 2, 1}}, 4),
+          arguments(new int[][] {{1}}, 1));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void cherryPickup(int[][] grid, int expectedResult) {
-    int actualResult = solution.cherryPickup(grid);
+  void longestIncreasingPath(int[][] matrix, int expectedResult) {
+    int actualResult = solution.longestIncreasingPath(matrix);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
