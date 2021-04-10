@@ -75,7 +75,7 @@ public class ReorganizeString_767 {
         counter[i]--;
       }
     }
-    return new String(res);
+    return String.valueOf(res);
   }
 }
 // leetcode submit region end(Prohibit modification and deletion)
