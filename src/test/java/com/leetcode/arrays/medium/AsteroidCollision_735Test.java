@@ -13,7 +13,7 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class AsteroidCollision_735Test {
 
-  AsteroidCollision_735 solution = new AsteroidCollision_735();
+  private final AsteroidCollision_735 solution = new AsteroidCollision_735();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
