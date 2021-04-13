@@ -1,0 +1,65 @@
+-- #Table: Customers
+-- #
+-- #
+-- #+--------------+------+
+-- #| Column Name  | Type |
+-- #+--------------+------+
+-- #| customer_id  | int  |
+-- #| year         | int  |
+-- #| revenue      | int  |
+-- #+--------------+------+
+-- #(customer_id, year) is the primary key for this table.
+-- #This table contains the customer ID and the revenue of customers in different y
+-- #ears.
+-- #Note that this revenue can be negative.
+-- #
+-- #
+-- #
+-- #
+-- # Write an SQL query to report the customers with postive revenue in the year 20
+-- #21.
+-- #
+-- # Return the result table in any order.
+-- #
+-- # The query result format is in the following example:
+-- #
+-- #
+-- #
+-- #
+-- #Customers
+-- #+-------------+------+---------+
+-- #| customer_id | year | revenue |
+-- #+-------------+------+---------+
+-- #| 1           | 2018 | 50      |
+-- #| 1           | 2021 | 30      |
+-- #| 1           | 2020 | 70      |
+-- #| 2           | 2021 | -50     |
+-- #| 3           | 2018 | 10      |
+-- #| 3           | 2016 | 50      |
+-- #| 4           | 2021 | 20      |
+-- #+-------------+------+---------+
+-- #
+-- #Result table:
+-- #+-------------+
+-- #| customer_id |
+-- #+-------------+
+-- #| 1           |
+-- #| 4           |
+-- #+-------------+
+-- #
+-- #Customer 1 has revenue equal to 50 in year 2021.
+-- #Customer 2 has revenue equal to -50 in year 2021.
+-- #Customer 3 has no revenue in year 2021.
+-- #Customer 4 has revenue equal to 20 in year 2021.
+-- #Thus only customers 1 and 4 have postive revenue in year 2021. 👍 2 👎 3
+--
+-- Runtime: 538 ms, faster than 81.90% of MySQL online submissions for Find Customers With Positive Revenue this Year.
+-- Memory Usage: 0B, less than 100.00% of MySQL online submissions for Find Customers With Positive Revenue this Year.
+--
+-- #leetcode submit region begin(Prohibit modification and deletion)
+-- # Write your MySQL query statement below
+SELECT customer_id
+FROM customers
+WHERE year = 2021
+  AND revenue > 0
+-- #leetcode submit region end(Prohibit modification and deletion)
