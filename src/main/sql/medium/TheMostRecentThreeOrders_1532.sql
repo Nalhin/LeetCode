@@ -109,6 +109,7 @@ FROM orders main
 GROUP BY main.order_id
 HAVING COUNT(newest.order_id) <= 3
 ORDER BY customer_name, main.customer_id, main.order_date DESC;
+
 -- Runtime: 752 ms, faster than 87.19% of MySQL online submissions for The Most Recent Three Orders.
 -- Memory Usage: 0B, less than 100.00% of MySQL online submissions for The Most Recent Three Orders.
 -- WINDOW FUNCTION
