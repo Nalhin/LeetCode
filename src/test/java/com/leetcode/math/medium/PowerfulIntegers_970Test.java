@@ -1,4 +1,4 @@
-package com.leetcode.arrays.medium;
+package com.leetcode.math.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,28 +6,29 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 
+import java.util.List;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class RotateArray_189Test {
-  private final RotateArray_189 solution = new RotateArray_189();
+class PowerfulIntegers_970Test {
+  private final PowerfulIntegers_970 solution = new PowerfulIntegers_970();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 2, 3, 4, 5, 6, 7}, 3, new int[] {5, 6, 7, 1, 2, 3, 4}),
-          arguments(new int[] {-1, -100, 3, 99}, 2, new int[] {3, 99, -1, -100}));
+          arguments(2, 3, 10, List.of(2, 3, 4, 5, 7, 9, 10)),
+          arguments(3, 5, 15, List.of(2, 4, 6, 8, 10, 14)));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void rotate(int[] input, int k, int[] expectedResult) {
-    solution.rotate(input, k);
+  void powerfulIntegers(int x, int y, int bound, List<Integer> expectedResult) {
+    List<Integer> actualResult = solution.powerfulIntegers(x, y, bound);
 
-    assertThat(input).isEqualTo(expectedResult);
+    assertThat(actualResult).containsExactlyInAnyOrderElementsOf(expectedResult);
   }
 }
