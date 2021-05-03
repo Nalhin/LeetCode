@@ -51,7 +51,10 @@ package com.leetcode.greedy.hard;
 //
 // Related Topics Greedy
 // 👍 1091 👎 44
-
+/*
+ O(nlog(n) * nlog(m)) Runtime: 40 ms, faster than 19.86% of Java online submissions for Course Schedule III.
+ O(m) Memory Usage: 47.3 MB, less than 59.57% of Java online submissions for Course Schedule III.
+*/
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import java.util.Arrays;
