@@ -1,7 +1,5 @@
 package com.leetcode.backtracking.hard;
 
-import com.leetcode.backtracking.medium.BeautifulArrangement_526;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
