@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.dp.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,27 +11,24 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-public class BullsAndCows_299Test {
+public class BestTimeToBuyAndSellStock_121Test {
 
-  private final BullsAndCows_299 solution = new BullsAndCows_299();
+  private final BestTimeToBuyAndSellStock_121 solution = new BestTimeToBuyAndSellStock_121();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments("1807", "7810", "1A3B"),
-          arguments("1123", "0111", "1A1B"),
-          arguments("112314431231231231", "044442311321233111", "5A10B"),
-          arguments("1123144", "0444411", "0A4B"));
+          arguments(new int[] {7, 1, 5, 3, 6, 4}, 5), arguments(new int[] {7, 6, 4, 3, 1}, 0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void longestCommonPrefix(String secret, String guess, String expected) {
+  void longestCommonPrefix(int[] input, int expectedResult) {
 
-    String result = solution.getHint(secret, guess);
+    int actualResult = solution.maxProfit(input);
 
-    assertThat(result).isEqualTo(expected);
+    assertThat(actualResult).isEqualTo(expectedResult);
   }
 }

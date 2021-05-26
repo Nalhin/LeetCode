@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.arrays.easy;
 // The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibon
 // acci sequence, such that each number is the sum of the two preceding ones, start
 // ing from 0 and 1. That is,

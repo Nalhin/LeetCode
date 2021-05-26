@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.hashtable.easy;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,29 +11,27 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class FibonacciNumber_509Test {
+public class BullsAndCows_299Test {
 
-  private final FibonacciNumber_509 solution = new FibonacciNumber_509();
+  private final BullsAndCows_299 solution = new BullsAndCows_299();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(-4, -4),
-          arguments(0, 0),
-          arguments(1, 1),
-          arguments(5, 5),
-          arguments(2, 1),
-          arguments(40, 102334155));
+          arguments("1807", "7810", "1A3B"),
+          arguments("1123", "0111", "1A1B"),
+          arguments("112314431231231231", "044442311321233111", "5A10B"),
+          arguments("1123144", "0444411", "0A4B"));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void fib(int input, int expectedResult) {
+  void longestCommonPrefix(String secret, String guess, String expected) {
 
-    int result = solution.fib(input);
+    String result = solution.getHint(secret, guess);
 
-    assertThat(result).isEqualTo(expectedResult);
+    assertThat(result).isEqualTo(expected);
   }
 }

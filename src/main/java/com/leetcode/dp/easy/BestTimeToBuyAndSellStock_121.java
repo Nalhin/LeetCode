@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.dp.easy;
 
 // Say you have an array for which the ith element is the price of a given stock
 // on day i.
@@ -37,11 +37,11 @@ public class BestTimeToBuyAndSellStock_121 {
     int best = 0;
     int min = Integer.MAX_VALUE;
 
-    for (int i = 0; i < prices.length; i++) {
-      if (prices[i] < min) {
-        min = prices[i];
-      } else if (prices[i] - min > best) {
-        best = prices[i] - min;
+    for (int price : prices) {
+      if (price < min) {
+        min = price;
+      } else if (price - min > best) {
+        best = price - min;
       }
     }
     return best;

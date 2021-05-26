@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.tree.easy;
 // Given a binary tree, each node has value 0 or 1. Each root-to-leaf path repres
 // ents a binary number starting with the most significant bit. For example, if the
 // path is 0 -> 1 -> 1 -> 0 -> 1, then this could represent 01101 in binary, which

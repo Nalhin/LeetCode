@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.binarysearch.medium;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,22 +11,28 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class SingleNumber_136Test {
+class SearchInsertPosition_35Test {
 
-  private final SingleNumber_136 solution = new SingleNumber_136();
+  private final SearchInsertPosition_35 solution = new SearchInsertPosition_35();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(new int[] {2, 2, 1}, 1), arguments(new int[] {4, 1, 2, 1, 2}, 4));
+      return Stream.of(
+          arguments(new int[] {1, 3, 5, 6}, 5, 2),
+          arguments(new int[] {1, 3, 5, 6}, 1, 0),
+          arguments(new int[] {1, 3, 5, 6}, 3, 1),
+          arguments(new int[] {1, 3, 5, 6}, 6, 3),
+          arguments(new int[] {1, 3, 5, 6}, 7, 4),
+          arguments(new int[] {1, 3, 5, 6}, 0, 0));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void singleNumber(int[] nums, int expectedResult) {
-    int actualResult = solution.singleNumber(nums);
+  void searchInsert(int[] nums, int target, int expected) {
+    int result = solution.searchInsert(nums, target);
 
-    assertThat(actualResult).isEqualTo(expectedResult);
+    assertThat(result).isEqualTo(expected);
   }
 }

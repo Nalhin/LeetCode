@@ -1,4 +1,4 @@
-package com.leetcode.easy;
+package com.leetcode.bitmanipulation.easy;
 // Given a non-empty array of integers, every element appears twice except for on
 // e. Find that single one.
 //
