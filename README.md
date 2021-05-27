@@ -7,6 +7,8 @@
 Solutions to LeetCode problems in Java (and SQL).
 The problems are grouped by tags (and difficulty) where applicable.
 
+## Tags 
+
 * [Java](src/main/java)
   * [Arrays](src/main/java/com/leetcode/arrays)
   * [Backtracking](src/main/java/com/leetcode/backtracking)
@@ -25,5 +27,8 @@ The problems are grouped by tags (and difficulty) where applicable.
   * [Strings](src/main/java/com/leetcode/strings)
   * [Tree](src/main/java/com/leetcode/tree)
 * [SQL](src/main/sql)    
-    
-    
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
