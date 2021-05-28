@@ -57,7 +57,7 @@ public class MaximumProductOfWordLength_318 {
 
     for (int i = 0; i < wordsAsBinary.length; i++) {
       for (int j = i; j < wordsAsBinary.length; j++) {
-        if (containUniqueLetters(wordsAsBinary[i], wordsAsBinary[j])) {
+        if (containsUniqueLetters(wordsAsBinary[i], wordsAsBinary[j])) {
           result = Math.max(words[i].length() * words[j].length(), result);
         }
       }
@@ -74,7 +74,7 @@ public class MaximumProductOfWordLength_318 {
     return result;
   }
 
-  private boolean containUniqueLetters(int encodedWord1, int encodedWord2) {
+  private boolean containsUniqueLetters(int encodedWord1, int encodedWord2) {
     return (encodedWord1 & encodedWord2) == 0;
   }
 }
