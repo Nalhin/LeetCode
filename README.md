@@ -23,6 +23,7 @@ The problems are grouped by tags (and difficulty) where applicable.
   * [Linked lists](src/main/java/com/leetcode/linkedlists)
   * [Math](src/main/java/com/leetcode/math)
   * [Queue](src/main/java/com/leetcode/queue)
+  * [Sort](src/main/java/com/leetcode/sort)  
   * [Stack](src/main/java/com/leetcode/stack)
   * [Strings](src/main/java/com/leetcode/strings)
   * [Two pointers](src/main/java/com/leetcode/twopointers)
