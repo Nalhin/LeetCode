@@ -66,7 +66,7 @@ public class MaximumGap_164 {
 
     int result = 0;
     int prev = min;
-    for (int i = 0; i < numOfBuckets - 1; i++) {
+    for (int i = 0; i < numOfBuckets; i++) {
       if (bucketsMin[i] != Integer.MAX_VALUE) {
         result = Math.max(bucketsMin[i] - prev, result);
         prev = bucketsMax[i];
