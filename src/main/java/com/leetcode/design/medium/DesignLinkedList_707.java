@@ -64,9 +64,6 @@ package com.leetcode.design.medium;
 public class DesignLinkedList_707 {
   private Node head;
 
-  /** Initialize your data structure here. */
-  public DesignLinkedList_707() {}
-
   /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
   public int get(int index) {
     if (head == null) {

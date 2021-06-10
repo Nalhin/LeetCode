@@ -63,9 +63,6 @@ public class DesignAddAndSearchWordsDataStructure_211 {
 
     private final Trie head = new Trie();
 
-    /** Initialize your data structure here. */
-    public WordDictionary() {}
-
     public void addWord(String word) {
       Trie curr = head;
       for (int i = 0; i < word.length(); i++) {

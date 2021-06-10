@@ -56,8 +56,6 @@ public class MyCalendarI_729 {
 
     private final TreeMap<Integer, Integer> events = new TreeMap<>();
 
-    public MyCalendar() {}
-
     public boolean book(int start, int end) {
       Integer prevStart = events.floorKey(start);
       Integer nextStart = events.ceilingKey(start);

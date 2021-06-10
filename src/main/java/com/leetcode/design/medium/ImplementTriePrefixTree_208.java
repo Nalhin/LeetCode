@@ -34,9 +34,6 @@ public class ImplementTriePrefixTree_208 {
 
     private TrieNode head = new TrieNode();
 
-    /** Initialize your data structure here. */
-    public Trie() {}
-
     /** Inserts a word into the trie. */
     public void insert(String word) {
 

@@ -127,8 +127,6 @@ public class DesignUndergroundSystem_1396 {
     private final Map<Integer, Start> inProgress = new HashMap<>();
     private final Map<String, Summary> summaryMap = new HashMap<>();
 
-    public UndergroundSystem() {}
-
     public void checkIn(int id, String stationName, int t) {
       inProgress.put(id, new Start(stationName, t));
     }
