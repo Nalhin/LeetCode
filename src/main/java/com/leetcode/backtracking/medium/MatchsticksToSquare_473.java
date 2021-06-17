@@ -35,7 +35,7 @@ package com.leetcode.backtracking.medium;
 // Related Topics Depth-first Search
 // 👍 869 👎 73
 /*
- O(4^n) Runtime: 866 ms, faster than 30.62% of Java online submissions for Matchsticks to Square.
+ O(4^n) Runtime: 149 ms, faster than 39.40% of Java online submissions for Matchsticks to Square.
  O(n) Memory Usage: 37.2 MB, less than 22.27% of Java online submissions for Matchsticks to Square.
 */
 // leetcode submit region begin(Prohibit modification and deletion)
@@ -56,17 +56,17 @@ public class MatchsticksToSquare_473 {
       return isValidSolution(sides);
     }
 
-    boolean canMatch = false;
-
     for (int i = 0; i < sides.length; i++) {
       if (sides[i] >= matchsticks[currIdx]) {
         sides[i] -= matchsticks[currIdx];
-        canMatch |= dfs(currIdx - 1, matchsticks, sides);
+        if (dfs(currIdx - 1, matchsticks, sides)) {
+          return true;
+        }
         sides[i] += matchsticks[currIdx];
       }
     }
 
-    return canMatch;
+    return false;
   }
 
   private boolean isValidSolution(int[] sides) {
