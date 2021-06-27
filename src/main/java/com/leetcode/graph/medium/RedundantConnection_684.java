@@ -73,7 +73,7 @@ public class RedundantConnection_684 {
       graph.get(to).add(from);
     }
 
-    return null;
+    throw new IllegalArgumentException();
   }
 
   private boolean isConnected(int from, int to, List<List<Integer>> graph, boolean[] visited) {
