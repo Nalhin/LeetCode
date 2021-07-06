@@ -12,7 +12,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class ReduceArraySizeToTheHalf_1338Test {
-  private final ReduceArraySizeToTheHalf_1338 solution = new ReduceArraySizeToTheHalf_1338();
+  private final ReduceArraySizeToTheHalf_1338.Sort solutionSort =
+      new ReduceArraySizeToTheHalf_1338.Sort();
+  private final ReduceArraySizeToTheHalf_1338.Buckets solutionBuckets =
+      new ReduceArraySizeToTheHalf_1338.Buckets();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -28,8 +31,16 @@ class ReduceArraySizeToTheHalf_1338Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void minSetSize(int[] arr, int expectedResult) {
-    int actualResult = solution.minSetSize(arr);
+  void minSetSizeSort(int[] arr, int expectedResult) {
+    int actualResult = solutionSort.minSetSize(arr);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void minSetSizeBuckets(int[] arr, int expectedResult) {
+    int actualResult = solutionBuckets.minSetSize(arr);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

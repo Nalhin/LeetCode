@@ -59,11 +59,6 @@ package com.leetcode.greedy.medium;
 // Related Topics Array Greedy
 // 👍 399 👎 38
 
-/*
- O(nlog(n)) Runtime: 81 ms, faster than 17.84% of Java online submissions for Reduce Array Size to The Half.
- O(n) Memory Usage: 105.8 MB, less than 7.59% of Java online submissions for Reduce Array Size to The Half.
-*/
-
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import java.util.HashMap;
@@ -72,23 +67,63 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ReduceArraySizeToTheHalf_1338 {
-  public int minSetSize(int[] arr) {
-    int size = arr.length;
 
-    Map<Integer, Integer> counter = new HashMap<>();
-    for (int num : arr) {
-      counter.put(num, counter.getOrDefault(num, 0) + 1);
+  /*
+   O(nlog(n)) Runtime: 81 ms, faster than 17.84% of Java online submissions for Reduce Array Size to The Half.
+   O(n) Memory Usage: 105.8 MB, less than 7.59% of Java online submissions for Reduce Array Size to The Half.
+  */
+  static class Sort {
+
+    public int minSetSize(int[] arr) {
+      int size = arr.length;
+
+      Map<Integer, Integer> counter = new HashMap<>();
+      for (int num : arr) {
+        counter.put(num, counter.getOrDefault(num, 0) + 1);
+      }
+
+      List<Integer> sorted =
+          counter.values().stream().sorted((a, b) -> b - a).collect(Collectors.toList());
+
+      int count = 0;
+      while (size > arr.length / 2) {
+        size -= sorted.get(count++);
+      }
+
+      return count;
     }
+  }
 
-    List<Integer> sorted =
-        counter.values().stream().sorted((a, b) -> b - a).collect(Collectors.toList());
+  static class Buckets {
+    /*
+     O(n) Runtime: 27 ms, faster than 87.96% of Java online submissions for Reduce Array Size to The Half.
+     O(n) Memory Usage: 48.7 MB, less than 81.94% of Java online submissions for Reduce Array Size to The Half.
+    */
+    public int minSetSize(int[] arr) {
+      Map<Integer, Integer> counter = new HashMap<>();
 
-    int count = 0;
-    while (size > arr.length / 2) {
-      size -= sorted.get(count++);
+      for (int num : arr) {
+        counter.merge(num, 1, (prev, b) -> prev + 1);
+      }
+
+      int[] timesOfOccurrences = new int[arr.length + 1];
+
+      for (Map.Entry<Integer, Integer> entry : counter.entrySet()) {
+        timesOfOccurrences[entry.getValue()]++;
+      }
+
+      int result = 0;
+
+      for (int i = timesOfOccurrences.length - 1, goal = 0; goal < arr.length / 2; i--) {
+        while (timesOfOccurrences[i] > 0 && goal < arr.length / 2) {
+          goal += i;
+          result++;
+          timesOfOccurrences[i]--;
+        }
+      }
+
+      return result;
     }
-
-    return count;
   }
 }
 // leetcode submit region end(Prohibit modification and deletion)
