@@ -47,7 +47,10 @@ package com.leetcode.arrays.medium;
 //
 // Related Topics Array Math Randomized
 // 👍 308 👎 350
-
+/*
+ O(n) Runtime: 70 ms, faster than 96.76% of Java online submissions for Shuffle an Array.
+ O(n) Memory Usage: 47.9 MB, less than 24.26% of Java online submissions for Shuffle an Array.
+*/
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import java.util.Arrays;
