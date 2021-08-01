@@ -40,21 +40,59 @@ package com.leetcode.tree.medium;
 //
 // Related Topics Tree Depth-First Search Binary Tree
 // 👍 782 👎 55
-
+/*
+ O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Binary Tree Longest Consecutive Sequence II.
+ O(n) Memory Usage: 38.8 MB, less than 72.03% of Java online submissions for Binary Tree Longest Consecutive Sequence II.
+*/
 // leetcode submit region begin(Prohibit modification and deletion)
 
 import com.leetcode.utils.BinaryTree.TreeNode;
 
-/**
+/*
  * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode
  * right; TreeNode() {} TreeNode(int val) { this.val = val; } TreeNode(int val, TreeNode left,
  * TreeNode right) { this.val = val; this.left = left; this.right = right; } }
  */
 public class BinaryTreeLongestConsecutiveSequenceII_549 {
 
+  private int result = 0;
+
   public int longestConsecutive(TreeNode root) {
-    return 0;
+    if (root == null) {
+      return 0;
+    }
+
+    dfs(root);
+    return result;
   }
 
+  private int[] dfs(TreeNode root) {
+    int smaller = 0;
+    int larger = 0;
+
+    if (root.left != null) {
+      int[] left = dfs(root.left);
+
+      if (root.val == root.left.val - 1) {
+        smaller = Math.max(smaller, left[0]);
+      } else if (root.val == root.left.val + 1) {
+        larger = Math.max(larger, left[1]);
+      }
+    }
+
+    if (root.right != null) {
+      int[] right = dfs(root.right);
+
+      if (root.val == root.right.val - 1) {
+        smaller = Math.max(smaller, right[0]);
+      } else if (root.val == root.right.val + 1) {
+        larger = Math.max(larger, right[1]);
+      }
+    }
+
+    result = Math.max(result, smaller + larger + 1);
+
+    return new int[] {smaller + 1, larger + 1};
+  }
 }
 // leetcode submit region end(Prohibit modification and deletion)
