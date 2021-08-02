@@ -19,7 +19,7 @@ class AlienDictionary_269Test {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new String[] {"wrt", "wrf", "er", "ett", "rftt"}, "wrtf"),
+          arguments(new String[] {"wrt", "wrf", "er", "ett", "rftt"}, "wertf"),
           arguments(new String[] {"z", "x"}, "zx"),
           arguments(new String[] {"z", "x", "z"}, ""));
     }

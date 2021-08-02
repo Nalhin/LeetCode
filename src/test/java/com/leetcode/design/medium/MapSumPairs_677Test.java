@@ -13,7 +13,7 @@ class MapSumPairs_677Test {
     mapSum.insert("apple", 3);
     softAssertions.assertThat(mapSum.sum("ap")).isEqualTo(3);
     mapSum.insert("app", 2);
-    softAssertions.assertThat(mapSum.sum("ap")).isEqualTo(2);
+    softAssertions.assertThat(mapSum.sum("ap")).isEqualTo(5);
     softAssertions.assertAll();
   }
 }
