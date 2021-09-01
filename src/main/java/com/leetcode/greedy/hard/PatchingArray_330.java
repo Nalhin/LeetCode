@@ -52,7 +52,6 @@ package com.leetcode.greedy.hard;
 */
 // leetcode submit region begin(Prohibit modification and deletion)
 
-// leetcode submit region end(Prohibit modification and deletion)
 public class PatchingArray_330 {
   public int minPatches(int[] nums, int n) {
     int result = 0;
@@ -70,3 +69,4 @@ public class PatchingArray_330 {
     return result;
   }
 }
+// leetcode submit region end(Prohibit modification and deletion)
