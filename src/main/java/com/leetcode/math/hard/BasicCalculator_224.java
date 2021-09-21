@@ -81,7 +81,6 @@ public class BasicCalculator_224 {
         signs.push(sign);
       } else if (currChar == ')') {
         signs.pop();
-        sign = signs.peek();
       }
     }
 
