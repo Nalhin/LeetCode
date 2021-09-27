@@ -1,0 +1,40 @@
+package com.leetcode.hashtable.easy;
+
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.ArgumentsProvider;
+import org.junit.jupiter.params.provider.ArgumentsSource;
+
+import java.util.stream.Stream;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
+
+class UniqueEmailAddresses_929Test {
+
+  private final UniqueEmailAddresses_929 solution = new UniqueEmailAddresses_929();
+
+  private static class TestArgumentsProvider implements ArgumentsProvider {
+    @Override
+    public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+      return Stream.of(
+          arguments(
+              new String[] {
+                "test.email+alex@leetcode.com",
+                "test.e.mail+bob.cathy@leetcode.com",
+                "testemail+david@lee.tcode.com"
+              },
+              2),
+          arguments(new String[] {"a@leetcode.com", "b@leetcode.com", "c@leetcode.com"}, 3));
+    }
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void numUniqueEmails(String[] words, int expectedResult) {
+    int actualResult = solution.numUniqueEmails(words);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+}
