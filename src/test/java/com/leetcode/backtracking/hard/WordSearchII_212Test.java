@@ -35,7 +35,7 @@ class WordSearchII_212Test {
               new String[] {"abcb"},
               Collections.emptyList()),
           arguments(
-              new char[][] {{'a', 'b'}, {'c', 'd'}}, List.of("abcb"), Collections.emptyList()));
+              new char[][] {{'a', 'b'}, {'c', 'd'}}, new String[]{"abcb"}, Collections.emptyList()));
     }
   }
 
@@ -44,6 +44,6 @@ class WordSearchII_212Test {
   void findWords(char[][] board, String[] words, List<String> expectedResult) {
     List<String> actualResult = solution.findWords(board, words);
 
-    assertThat(actualResult).isEqualTo(expectedResult);
+    assertThat(actualResult).containsExactlyInAnyOrderElementsOf(expectedResult);
   }
 }
