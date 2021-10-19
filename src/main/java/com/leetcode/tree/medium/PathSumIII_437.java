@@ -55,25 +55,25 @@ public class PathSumIII_437 {
     return prefixDfs(root, targetSum, 0, map);
   }
 
-  private int prefixDfs(TreeNode root, int target, int prefix, Map<Integer, Integer> map) {
+  private int prefixDfs(TreeNode root, int target, int prefixSum, Map<Integer, Integer> map) {
     if (root == null) {
       return 0;
     }
 
     int result = 0;
 
-    prefix += root.val;
-    if (prefix == target) {
+    prefixSum += root.val;
+    if (prefixSum == target) {
       result++;
     }
 
-    result += map.getOrDefault(prefix - target, 0);
-    map.merge(prefix, 1, Integer::sum);
+    result += map.getOrDefault(prefixSum - target, 0);
+    map.merge(prefixSum, 1, Integer::sum);
 
-    int sumLeft = prefixDfs(root.left, target, prefix, map);
-    int sumRight = prefixDfs(root.right, target, prefix, map);
+    int sumLeft = prefixDfs(root.left, target, prefixSum, map);
+    int sumRight = prefixDfs(root.right, target, prefixSum, map);
 
-    map.merge(prefix, -1, Integer::sum);
+    map.merge(prefixSum, -1, Integer::sum);
 
     return result + sumLeft + sumRight;
   }
