@@ -20,7 +20,7 @@ class MaximumSizeSubarraySumEqualsK_325Test {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(new int[] {1, 2, 3, 4}, 5, 2), arguments(new int[] {3, 1, 3, 4, 3}, 6, 1));
+          arguments(new int[] {1, 2, 3, 4}, 5, 2), arguments(new int[] {-2, -1, 2, 1}, 1, 2));
     }
   }
 
