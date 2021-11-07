@@ -3,8 +3,8 @@ package com.leetcode.binarysearch.hard;
 import java.util.Arrays;
 
 /*
- O(n * log(n / (k + 1)) Runtime: 5 ms, faster than 62.83% of Java online submissions for Divide Chocolate.
- O(1) Memory Usage: 39.5 MB, less than 34.91% of Java online submissions for Divide Chocolate.
+ O(n * log(n / (k + 1)) Runtime: 4 ms, faster than 93.77% of Java online submissions for Divide Chocolate.
+ O(1) Memory Usage: 39.3 MB, less than 54.25% of Java online submissions for Divide Chocolate.
 */
 public class DivideChocolate_1231 {
   public int maximizeSweetness(int[] sweetness, int k) {
@@ -39,6 +39,9 @@ public class DivideChocolate_1231 {
       if (curr >= target) {
         total++;
         curr = 0;
+        if(total >= fragments){
+          return true;
+        }
       }
     }
 
