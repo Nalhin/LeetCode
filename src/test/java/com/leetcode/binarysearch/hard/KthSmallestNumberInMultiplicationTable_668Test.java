@@ -19,7 +19,7 @@ class KthSmallestNumberInMultiplicationTable_668Test {
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(3, 3, 5), arguments(2, 3, 6));
+      return Stream.of(arguments(3, 3, 5, 3), arguments(2, 3, 6, 6));
     }
   }
 
