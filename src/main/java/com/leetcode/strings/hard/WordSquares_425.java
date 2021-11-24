@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 /*
  O(N * M + 26^M) Runtime: 26 ms, faster than 92.92% of Java online submissions for Word Squares.
  O(N * M) Memory Usage: 63.1 MB, less than 16.96% of Java online submissions for Word Squares.
 */
-
 public class WordSquares_425 {
 
   private static class TrieNode {
