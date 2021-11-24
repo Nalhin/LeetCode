@@ -53,8 +53,8 @@ package com.leetcode.hashtable.hard;
 //
 // Related Topics Array Hash Table String Bit Manipulation Trie 👍 783 👎 63
 /*
-  Runtime: 101 ms, faster than 39.47% of Java online submissions for Number of Valid Words for Each Puzzle.
-  Memory Usage: 93.8 MB, less than 5.32% of Java online submissions for Number of Valid Words for Each Puzzle.*
+  O(n^2 + m * 2^m) Runtime: 101 ms, faster than 39.47% of Java online submissions for Number of Valid Words for Each Puzzle.
+  O(n) Memory Usage: 93.8 MB, less than 5.32% of Java online submissions for Number of Valid Words for Each Puzzle.*
 */
 import java.util.ArrayList;
 import java.util.HashMap;

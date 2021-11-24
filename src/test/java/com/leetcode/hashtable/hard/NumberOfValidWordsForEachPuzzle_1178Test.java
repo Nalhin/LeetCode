@@ -24,11 +24,11 @@ class NumberOfValidWordsForEachPuzzle_1178Test {
           arguments(
               new String[] {"aaaa", "asas", "able", "ability", "actt", "actor", "access"},
               new String[] {"aboveyz", "abrodyz", "abslute", "absoryz", "actresz", "gaswxyz"},
-              new int[] {1, 1, 3, 2, 4, 0}),
+              List.of(1, 1, 3, 2, 4, 0)),
           arguments(
               new String[] {"apple", "pleas", "please"},
               new String[] {"aelwxyz", "aelpxyz", "aelpsxy", "saelpxy", "xaelpsy"},
-              new int[] {0, 1, 3, 2, 0}));
+              List.of(0, 1, 3, 2, 0)));
     }
   }
 
