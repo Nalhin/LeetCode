@@ -43,30 +43,99 @@ package com.leetcode.graph.medium;
 // 👍 2740 👎 170
 
 // leetcode submit region begin(Prohibit modification and deletion)
-/*
- O(n*n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Number of Provinces.
- O(n) Memory Usage: 39.8 MB, less than 78.57% of Java online submissions for Number of Provinces.
-*/
-public class NumberOfProvinces_547 {
-  public int findCircleNum(int[][] graph) {
-    boolean[] visited = new boolean[graph.length];
-    int result = 0;
 
-    for (int i = 0; i < graph.length; i++) {
-      if (!visited[i]) {
-        visit(i, graph, visited);
-        result++;
+public class NumberOfProvinces_547 {
+  /*
+   O(n^2) Runtime: 0 ms, faster than 100.00% of Java online submissions for Number of Provinces.
+   O(n) Memory Usage: 39.8 MB, less than 78.57% of Java online submissions for Number of Provinces.
+  */
+  public static class DfsSolution {
+
+    public int findCircleNum(int[][] graph) {
+      boolean[] visited = new boolean[graph.length];
+      int result = 0;
+
+      for (int i = 0; i < graph.length; i++) {
+        if (!visited[i]) {
+          visit(i, graph, visited);
+          result++;
+        }
       }
+
+      return result;
     }
 
-    return result;
+    private void visit(int city, int[][] graph, boolean[] visited) {
+      for (int i = 0; i < graph.length; i++) {
+        if (graph[city][i] == 1 && !visited[i]) {
+          visited[i] = true;
+          visit(i, graph, visited);
+        }
+      }
+    }
   }
+  /*
+   O(n^2 + n * a(n)) Runtime: 1 ms, faster than 81.06% of Java online submissions for Number of Provinces.
+   O(n) Memory Usage: 39.6 MB, less than 96.91% of Java online submissions for Number of Provinces.
+  */
+  public static class UnionFindSolution {
 
-  private void visit(int city, int[][] graph, boolean[] visited) {
-    for (int i = 0; i < graph.length; i++) {
-      if (graph[city][i] == 1 && !visited[i]) {
-        visited[i] = true;
-        visit(i, graph, visited);
+    public int findCircleNum(int[][] isConnected) {
+      int n = isConnected.length;
+
+      UnionFind uf = new UnionFind(n);
+
+      for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+          if (isConnected[i][j] == 1) {
+            uf.union(i, j);
+          }
+        }
+      }
+
+      return uf.provinces;
+    }
+
+    private static class UnionFind {
+
+      private final int[] parent;
+      private final int[] ranks;
+      private int provinces;
+
+      private UnionFind(int n) {
+        this.parent = new int[n];
+        this.ranks = new int[n];
+        this.provinces = n;
+
+        for (int i = 0; i < n; i++) {
+          parent[i] = i;
+        }
+      }
+
+      private int find(int a) {
+        if (parent[a] == a) {
+          return a;
+        }
+        return parent[a] = find(parent[a]);
+      }
+
+      private void union(int a, int b) {
+        int parentA = find(a);
+        int parentB = find(b);
+
+        if (parentA == parentB) {
+          return;
+        }
+
+        if (ranks[parentA] == ranks[parentB]) {
+          parent[parentB] = parentA;
+          ranks[parentA]++;
+        } else if (ranks[parentA] > ranks[parentB]) {
+          parent[parentB] = parentA;
+        } else {
+          parent[parentA] = parentB;
+        }
+        provinces--;
       }
     }
   }
