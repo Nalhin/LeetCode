@@ -49,7 +49,7 @@ public class NumberOfProvinces_547 {
    O(n^2) Runtime: 0 ms, faster than 100.00% of Java online submissions for Number of Provinces.
    O(n) Memory Usage: 39.8 MB, less than 78.57% of Java online submissions for Number of Provinces.
   */
-  public static class DfsSolution {
+  public static class Dfs {
 
     public int findCircleNum(int[][] graph) {
       boolean[] visited = new boolean[graph.length];
@@ -78,7 +78,7 @@ public class NumberOfProvinces_547 {
    O(n^2 + n * a(n)) Runtime: 1 ms, faster than 81.06% of Java online submissions for Number of Provinces.
    O(n) Memory Usage: 39.6 MB, less than 96.91% of Java online submissions for Number of Provinces.
   */
-  public static class UnionFindSolution {
+  public static class Dsu {
 
     public int findCircleNum(int[][] isConnected) {
       int n = isConnected.length;

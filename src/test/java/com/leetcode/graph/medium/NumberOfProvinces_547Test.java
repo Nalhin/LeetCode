@@ -12,8 +12,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class NumberOfProvinces_547Test {
-  private final NumberOfProvinces_547.DfsSolution solutionDfs = new NumberOfProvinces_547.DfsSolution();
-  private final NumberOfProvinces_547.UnionFindSolution solutionUnionFind = new NumberOfProvinces_547.UnionFindSolution();
+  private final NumberOfProvinces_547.Dfs solutionDfs = new NumberOfProvinces_547.Dfs();
+  private final NumberOfProvinces_547.Dsu solutionDsu = new NumberOfProvinces_547.Dsu();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -34,8 +34,8 @@ class NumberOfProvinces_547Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void findCircleNumUnionFind(int[][] heights, int expectedResult) {
-    int actualResult = solutionUnionFind.findCircleNum(heights);
+  void findCircleNumDsu(int[][] heights, int expectedResult) {
+    int actualResult = solutionDsu.findCircleNum(heights);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }

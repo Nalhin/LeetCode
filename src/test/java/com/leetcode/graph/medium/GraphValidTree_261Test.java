@@ -13,7 +13,8 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class GraphValidTree_261Test {
 
-  private final GraphValidTree_261 solution = new GraphValidTree_261();
+  private final GraphValidTree_261.Dfs solutionDfs = new GraphValidTree_261.Dfs();
+  private final GraphValidTree_261.Dsu solutionDsu = new GraphValidTree_261.Dsu();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -26,8 +27,16 @@ class GraphValidTree_261Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void validTree(int n, int[][] edges, boolean expectedResult) {
-    boolean actualResult = solution.validTree(n, edges);
+  void validTreeDfs(int n, int[][] edges, boolean expectedResult) {
+    boolean actualResult = solutionDfs.validTree(n, edges);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void validTreeDsu(int n, int[][] edges, boolean expectedResult) {
+    boolean actualResult = solutionDsu.validTree(n, edges);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
