@@ -13,8 +13,10 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class OptimizeWaterDistributionInAVillage_1168Test {
 
-  private final OptimizeWaterDistributionInAVillage_1168 solution =
-      new OptimizeWaterDistributionInAVillage_1168();
+  private final OptimizeWaterDistributionInAVillage_1168.Prim solutionPrim =
+      new OptimizeWaterDistributionInAVillage_1168.Prim();
+  private final OptimizeWaterDistributionInAVillage_1168.Kruskal solutionKruskal =
+      new OptimizeWaterDistributionInAVillage_1168.Kruskal();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -25,8 +27,16 @@ class OptimizeWaterDistributionInAVillage_1168Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void minCostToSupplyWater(int n, int[] wells, int[][] pipes, int expectedResult) {
-    int actualResult = solution.minCostToSupplyWater(n, wells, pipes);
+  void minCostToSupplyWaterPrim(int n, int[] wells, int[][] pipes, int expectedResult) {
+    int actualResult = solutionPrim.minCostToSupplyWater(n, wells, pipes);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void minCostToSupplyWaterKruskal(int n, int[] wells, int[][] pipes, int expectedResult) {
+    int actualResult = solutionKruskal.minCostToSupplyWater(n, wells, pipes);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
