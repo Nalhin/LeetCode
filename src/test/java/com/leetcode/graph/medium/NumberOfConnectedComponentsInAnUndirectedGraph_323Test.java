@@ -13,8 +13,10 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class NumberOfConnectedComponentsInAnUndirectedGraph_323Test {
 
-  private final NumberOfConnectedComponentsInAnUndirectedGraph_323 solution =
-      new NumberOfConnectedComponentsInAnUndirectedGraph_323();
+  private final NumberOfConnectedComponentsInAnUndirectedGraph_323.Dfs solutionDfs =
+      new NumberOfConnectedComponentsInAnUndirectedGraph_323.Dfs();
+  private final NumberOfConnectedComponentsInAnUndirectedGraph_323.Dsu solutionDsu =
+      new NumberOfConnectedComponentsInAnUndirectedGraph_323.Dsu();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -27,8 +29,16 @@ class NumberOfConnectedComponentsInAnUndirectedGraph_323Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void countComponents(int n, int[][] edges, int expectedResult) {
-    int actualResult = solution.countComponents(n, edges);
+  void countComponentsDfs(int n, int[][] edges, int expectedResult) {
+    int actualResult = solutionDfs.countComponents(n, edges);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void countComponentsDsu(int n, int[][] edges, int expectedResult) {
+    int actualResult = solutionDsu.countComponents(n, edges);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
