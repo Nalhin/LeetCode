@@ -61,7 +61,7 @@ package com.leetcode.graph.medium;
 // Find 👍 3471 👎 623
 /*
  O(nmlog(nm)) Runtime: 42 ms, faster than 52.81% of Java online submissions for Accounts Merge.
- O(n) Memory Usage: 43.3 MB, less than 83.81% of Java online submissions for Accounts Merge.
+ O(nm) Memory Usage: 43.3 MB, less than 83.81% of Java online submissions for Accounts Merge.
 */
 // leetcode submit region begin(Prohibit modification and deletion)
 
