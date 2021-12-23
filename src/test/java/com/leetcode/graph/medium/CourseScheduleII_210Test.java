@@ -11,33 +11,33 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class GraphValidTree_261Test {
+class CourseScheduleII_210Test {
 
-  private final GraphValidTree_261.Dfs solutionDfs = new GraphValidTree_261.Dfs();
-  private final GraphValidTree_261.Dsu solutionDsu = new GraphValidTree_261.Dsu();
+  private final CourseScheduleII_210.Dfs solutionDfs = new CourseScheduleII_210.Dfs();
+  private final CourseScheduleII_210.Kahn solutionKahn = new CourseScheduleII_210.Kahn();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments(5, new int[][] {{0, 1}, {0, 2}, {0, 3}, {1, 4}}, true),
-          arguments(5, new int[][] {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}}, false));
+          arguments(2, new int[][] {{1, 0}}, new int[] {0, 1}),
+          arguments(4, new int[][] {{1, 0}, {2, 0}, {3, 1}, {3, 2}}, new int[] {0, 1, 2, 3}),
+          arguments(1, new int[][] {}, new int[] {0}));
     }
   }
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void validTreeDfs(int n, int[][] edges, boolean expectedResult) {
-    boolean actualResult = solutionDfs.validTree(n, edges);
+  void validTreeDfs(int numCourses, int[][] prerequisites, int[] expectedResult) {
+    int[] actualResult = solutionDfs.findOrder(numCourses, prerequisites);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
 
-
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void validTreeDsu(int n, int[][] edges, boolean expectedResult) {
-    boolean actualResult = solutionDsu.validTree(n, edges);
+  void validTreeKahn(int numCourses, int[][] prerequisites, int[] expectedResult) {
+    int[] actualResult = solutionKahn.findOrder(numCourses, prerequisites);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
