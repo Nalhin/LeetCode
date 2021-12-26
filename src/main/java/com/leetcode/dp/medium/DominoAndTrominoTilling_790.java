@@ -34,7 +34,7 @@ package com.leetcode.dp.medium;
 //
 // Related Topics Dynamic Programming 👍 1269 👎 528
 /*
-  O(n) Runtime: 3 ms, faster than 15.17% of Java online submissions for Domino and Tromino Tiling.
+  O(n) Runtime: 0 ms, faster than 100.00% of Java online submissions for Domino and Tromino Tiling.
   O(1) Memory Usage: 36.1 MB, less than 27.42% of Java online submissions for Domino and Tromino Tiling.
 */
 // leetcode submit region begin(Prohibit modification and deletion)
@@ -43,23 +43,20 @@ public class DominoAndTrominoTilling_790 {
   private static final int MOD = 1_000_000_007;
 
   public int numTilings(int n) {
-    int[][] dp = new int[2][2];
-
-    dp[1][0] = 1;
-    dp[0][0] = 1;
+    int full = 1;
+    int fullPrev = 1;
+    int partial = 0;
 
     for (int i = 2; i <= n; i++) {
+      int newFull = (partial * 2 % MOD + (full + fullPrev) % MOD) % MOD;
+      int newPartial = (fullPrev + partial) % MOD;
 
-      int[][] newDp = new int[2][2];
-      newDp[0][0] = dp[1][0];
-      newDp[0][1] = dp[1][1];
-
-      newDp[1][0] = (dp[1][1] * 2 % MOD + (dp[1][0] + dp[0][0]) % MOD) % MOD;
-      newDp[1][1] = (dp[0][0] + dp[1][1]) % MOD;
-      dp = newDp;
+      fullPrev = full;
+      full = newFull;
+      partial = newPartial;
     }
 
-    return dp[1][0];
+    return full;
   }
 }
 // leetcode submit region end(Prohibit modification and deletion)
