@@ -19,7 +19,7 @@ class StringTransformsIntoAnotherString_1153Test {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
       return Stream.of(
-          arguments("aabc", "ccdee", true),
+          arguments("aabbc", "ccdee", true),
           arguments("leetcode", "codeleet", false));
     }
   }
