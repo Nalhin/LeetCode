@@ -1,0 +1,67 @@
+package com.leetcode.math.easy;
+
+// Given a string columnTitle that represents the column title as appear in an
+// Excel sheet, return its corresponding column number.
+//
+// For example:
+//
+//
+// A -> 1
+// B -> 2
+// C -> 3
+// ...
+// Z -> 26
+// AA -> 27
+// AB -> 28
+// ...
+//
+//
+//
+// Example 1:
+//
+//
+// Input: columnTitle = "A"
+// Output: 1
+//
+//
+// Example 2:
+//
+//
+// Input: columnTitle = "AB"
+// Output: 28
+//
+//
+// Example 3:
+//
+//
+// Input: columnTitle = "ZY"
+// Output: 701
+//
+//
+//
+// Constraints:
+//
+//
+// 1 <= columnTitle.length <= 7
+// columnTitle consists only of uppercase English letters.
+// columnTitle is in the range ["A", "FXSHRXW"].
+//
+// Related Topics Math String 👍 2942 👎 254
+/*
+  O(log(n)) Runtime: 1 ms, faster than 99.69% of Java online submissions for Excel Sheet Column Number.
+  O(1) Memory Usage: 40.9 MB, less than 39.52% of Java online submissions for Excel Sheet Column Number.
+ */
+// leetcode submit region begin(Prohibit modification and deletion)
+
+public class ExcelSheetColumnNumber_171 {
+  public int titleToNumber(String columnTitle) {
+    int result = 0;
+    for (int i = 0; i < columnTitle.length(); i++) {
+      result *= 26;
+      result += columnTitle.charAt(i) - 'A' + 1;
+    }
+
+    return result;
+  }
+}
+// leetcode submit region end(Prohibit modification and deletion)
