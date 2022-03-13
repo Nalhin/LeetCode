@@ -48,7 +48,10 @@ package com.leetcode.divideandconquer.hard;
 // Related Topics Array Divide and Conquer Interactive 👍 357 👎 42
 
 // leetcode submit region begin(Prohibit modification and deletion)
-
+/*
+ O(log4(n*m) Runtime: 0 ms, faster than 100.00% of Java online submissions for Number of Ships in a Rectangle.
+ O(log4(n*m) Memory Usage: 40.1 MB, less than 77.64% of Java online submissions for Number of Ships in a Rectangle.
+*/
 // This is Sea's API interface.
 // You should not implement it, or speculate about its implementation
 
