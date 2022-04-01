@@ -34,7 +34,7 @@ class TwoCityScheduling_1029Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void twoCitySchedCost(int[] nums, int expectedResult) {
+  void twoCitySchedCost(int[][] nums, int expectedResult) {
     int actualResult = solution.twoCitySchedCost(nums);
 
     assertThat(actualResult).isEqualTo(expectedResult);
