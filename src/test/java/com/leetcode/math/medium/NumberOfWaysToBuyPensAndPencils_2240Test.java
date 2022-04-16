@@ -19,7 +19,7 @@ class NumberOfWaysToBuyPensAndPencils_2240Test {
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(20, 10, 5, 9), arguments(5, 10, 10));
+      return Stream.of(arguments(20, 10, 5, 9), arguments(5, 10, 10, 1));
     }
   }
 
