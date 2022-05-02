@@ -20,7 +20,7 @@ class SortArrayByParity_905Test {
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
-      return Stream.of(arguments(new int[] {3, 1, 2, 4}, new int[] {2, 4, 1, 3}));
+      return Stream.of(arguments(new int[] {3, 2}, new int[] {2, 3}));
     }
   }
 
