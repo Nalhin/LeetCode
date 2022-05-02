@@ -13,7 +13,9 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class SortArrayByParity_905Test {
 
-  private final SortArrayByParity_905 solution = new SortArrayByParity_905();
+  private final SortArrayByParity_905.InPlace solutionInPlace = new SortArrayByParity_905.InPlace();
+  private final SortArrayByParity_905.NewOutput solutionNewOutput =
+      new SortArrayByParity_905.NewOutput();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -24,8 +26,16 @@ class SortArrayByParity_905Test {
 
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
-  void sortArrayByParity(int[] input, int[] expectedResult) {
-    int[] actualResult = solution.sortArrayByParity(input);
+  void sortArrayByParityInPlace(int[] input, int[] expectedResult) {
+    int[] actualResult = solutionInPlace.sortArrayByParity(input);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void sortArrayByParityNewOutput(int[] input, int[] expectedResult) {
+    int[] actualResult = solutionNewOutput.sortArrayByParity(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
