@@ -105,5 +105,35 @@ public class ShortestUnsortedContinuousSubarray_581 {
       return right - left > 0 ? right - left + 1 : 0;
     }
   }
+  /*
+    O(n) Runtime: 2 ms, faster than 74.52% of Java online submissions for Shortest Unsorted Continuous Subarray.
+    O(1) Memory Usage: 53.3 MB, less than 71.03% of Java online submissions for Shortest Unsorted Continuous Subarray.
+  */
+  static class TwoPointers {
+    public int findUnsortedSubarray(int[] nums) {
+
+      int max = nums[0];
+      int right = 0;
+
+      for (int i = 1; i < nums.length; i++) {
+        if (nums[i] < max) {
+          right = i;
+        }
+        max = Math.max(max, nums[i]);
+      }
+
+      int min = nums[nums.length - 1];
+      int left = nums.length - 1;
+
+      for (int i = nums.length - 2; i >= 0; i--) {
+        if (nums[i] > min) {
+          left = i;
+        }
+        min = Math.min(min, nums[i]);
+      }
+
+      return right == 0 ? 0 : right - left + 1;
+    }
+  }
 }
 // leetcode submit region end(Prohibit modification and deletion)

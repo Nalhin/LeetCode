@@ -17,7 +17,9 @@ class ShortestUnsortedContinuousSubarray_581Test {
       new ShortestUnsortedContinuousSubarray_581.Sort();
 
   private final ShortestUnsortedContinuousSubarray_581.Stack solutionStack =
-          new ShortestUnsortedContinuousSubarray_581.Stack();
+      new ShortestUnsortedContinuousSubarray_581.Stack();
+  private final ShortestUnsortedContinuousSubarray_581.TwoPointers solutionTwoPointers =
+      new ShortestUnsortedContinuousSubarray_581.TwoPointers();
 
   private static class TestArgumentsProvider implements ArgumentsProvider {
     @Override
@@ -37,11 +39,18 @@ class ShortestUnsortedContinuousSubarray_581Test {
     assertThat(actualResult).isEqualTo(expectedResult);
   }
 
-
   @ParameterizedTest
   @ArgumentsSource(TestArgumentsProvider.class)
   void findUnsortedSubarrayStack(int[] input, int expectedResult) {
     int actualResult = solutionStack.findUnsortedSubarray(input);
+
+    assertThat(actualResult).isEqualTo(expectedResult);
+  }
+
+  @ParameterizedTest
+  @ArgumentsSource(TestArgumentsProvider.class)
+  void findUnsortedSubarrayTwoPointers(int[] input, int expectedResult) {
+    int actualResult = solutionTwoPointers.findUnsortedSubarray(input);
 
     assertThat(actualResult).isEqualTo(expectedResult);
   }
