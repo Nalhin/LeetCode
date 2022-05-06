@@ -77,6 +77,14 @@ public class RemoveAllAdjacentDuplicatesInStringII_1209 {
       }
       count++;
     }
+    Payload p = new Payload(count, prev).removeExcessIfPossible(k);
+    if (!deque.isEmpty() && deque.peek().canMerge(p)) {
+      p = deque.pop().merge(p).removeExcessIfPossible(k);
+    }
+
+    if (!p.isEmpty()) {
+      deque.push(p);
+    }
 
     StringBuilder sb = new StringBuilder();
 
@@ -84,7 +92,6 @@ public class RemoveAllAdjacentDuplicatesInStringII_1209 {
       Payload payload = deque.removeLast();
       sb.append(String.valueOf(payload.letter).repeat(payload.count));
     }
-    sb.append(String.valueOf(prev).repeat(count % k));
 
     return sb.toString();
   }
